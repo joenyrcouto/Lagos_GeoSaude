@@ -32,7 +32,7 @@
     });
 
     // Adicione marcadores personalizados ao mapa a partir de um arquivo de texto externo
-    fetch('https://docs.google.com/document/d/1ZUKCt1E5l8-O_HVuNmn9Ir4usTtZq1I6eypRwR8zrxQ/edit?usp=drivesdk')
+    fetch('https://raw.githubusercontent.com/joenyrcouto/tcc/main/markers.txt')
       .then(response => response.text())
       .then(text => {
         const markers = text.split('\n');

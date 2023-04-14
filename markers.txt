@@ -4,7 +4,7 @@
 
 -43.142910;-22.966045;Laboratório XYZ;Rua XYZ, nº 789,Seg-Sex, 7h-19h. Sáb, 8h-12h
 
--42.17922553454347,-22.94286374282392;UNIDADE DE SAUDE DA FAMILIA TEREZA VIEIRA FRANCISCONE;R. São Januário, Arraial do Cabo - RJ <br> Seg-Sab, 8h-17h
+-42.17922553454347;-22.94286374282392;UNIDADE DE SAUDE DA FAMILIA TEREZA VIEIRA FRANCISCONE;R. São Januário, Arraial do Cabo - RJ <br> Seg-Sab, 8h-17h
 
 -22.965535303715846, -42.0309152396039;Unidade De Saúde Da Familia Boa Vista;Alameda Boa Vista - Centro, Arraial do Cabo - RJ <br> Seg-Sex, 8h-17h
 

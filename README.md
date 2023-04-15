@@ -12,7 +12,6 @@ não modifique aqui, faça fork para modificações próprias, para assim ficar 
 
 `Bloco3`: nome da instituição (vai ser o título do marcador)
 
-`Bloco4`: informações da instituição, usa <br> pra quebra de linha
-
+`Bloco4`: informações da instituição, pra quebra de linha, use o br no mesmo formato para html
 # link do site:
 https://joenyrcouto.github.io/tcc/

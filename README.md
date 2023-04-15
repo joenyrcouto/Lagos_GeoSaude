@@ -1,5 +1,18 @@
-ATENÇÃO, NÃO MODIFIQUE O BRANCH PRIMARIO, FAÇA ALTERAÇÕES NO DE TESTE, E FALE PRO CRIADOR DO REPOSITÓRIO ATUALIZAR CASO JÁ LÁ TESTADO E APROVADO NOVA ATUALIZAÇÃO.
+Atenção: não modifique aqui, faça fork para modificações próprias, para assim ficar como ponto de backup.
 
-para adicionar novo ponto de informação, vá em markers e adicione por linha as informação separas por ";", igual os outros que já estão ali.
+em relação aos markers:
 
-senquência das info dos pontos: lng; lat; title; description
+
+
+
+[Bloco1];[Bloco2];[Bloco3];[Bloco4]
+
+Bloco1: longitude, acho q por aqui no Brasil vai ter o começo sempre dado por 40
+
+Bloco2: latitude, começo vai ser aproximadamente 20
+
+Bloco3: nome da instituição (vai ser o título do marcador)
+
+Bloco4: informações da instituição, usa <br> pra quebra de linha
+
+link do site: https://joenyrcouto.github.io/tcc/

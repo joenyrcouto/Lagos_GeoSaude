@@ -6,7 +6,7 @@ não modifique aqui, faça fork para modificações próprias, para assim ficar 
 `Bloco1`;`Bloco2`;`Bloco3`;`Bloco4`
 
 
-`Bloco1`: longitude, acho q por aqui no Brasil vai ter o começo sempre dado por 40
+`Bloco1`: longitude, começo vai ser aproximadamente 40
 
 `Bloco2`: latitude, começo vai ser aproximadamente 20
 

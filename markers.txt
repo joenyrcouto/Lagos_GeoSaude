@@ -34,7 +34,7 @@
 -42.37156070155685;-22.882986554519636;PSF Posto de Saúde da família;R. Joaquim Barbosa, 200-232 - Pte. dos Leites, Araruama - RJ <br> Seg-Sex, 8h-17h
 
 
--42.33960317997218;-22.859403695188504;Policlínica Da Família,R. Barão de Vassouras, s/n - Mutirão, Araruama - RJ <br> Seg-Sex, 7h-17h
+-42.33960317997218;-22.859403695188504;Policlínica Da Família;R. Barão de Vassouras, s/n - Mutirão, Araruama - RJ <br> Seg-Sex, 7h-17h
 
 
 -42.323724503903875;-22.85568643219061;Policlinica Municipal da Fazendinha;Parque Alves Branco II, Araruama - RJ <br> 7h as 16h
@@ -82,7 +82,7 @@
 -42.333789171256086;-22.868044986824138; Grupo Med;Av. Getúlio Vargas, 979 - Centro, Araruama - RJ
 
 
--41.89078717200506;-22.761393866469273;UBS - (Ferradura);Lot. Portal da Ferradura, Búzios - RJ <br>
+-41.89078717200506;-22.761393866469273;UBS - (Ferradura);Lot. Portal da Ferradura, Búzios - RJ
 
 
 -41.92886956406089;-22.777845883954818;Unidade Básica de Saúde Cem Braças

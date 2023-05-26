@@ -14,4 +14,4 @@ não modifique aqui, faça fork para modificações próprias, para assim ficar 
 
 `Bloco4`: informações da instituição, pra quebra de linha, use o br entre <>
 # link do site:
-https://joenyrcouto.github.io/tcc/
+https://joenyrcouto.github.io/Lagos_GeoSaude/

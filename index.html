@@ -1,81 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
-  <title>Busca de instituições da região dos lagos</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
-  <link rel="stylesheet" href="style.css">
-  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
-  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-	
+    <meta charset="UTF-8">
+    <title>Mapbox GL JS Example</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
 </head>
-	
 <body>
-	
-  <!-- exibir mapa/pesquisa -->
+    <div id="map"></div>
+    <button id="location-button" class="location-button">
+        <i class="fa-solid fa-location-crosshairs"></i>
+    </button>
 
-	<div id='map'></div>
-	<div id='search-container' class='search-container'></div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.3/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.3/mapbox-gl-geocoder.css" type="text/css">
 
-  <!-- iniciar mapa -->
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9lY291dG8iLCJhIjoiY2xmcHN5NndpMGN0MDN4bmw1ZTQ3N2owNSJ9.Wm1TXO5LIzXcvRPVkLdXJQ';
 
-  <script>
-
-    mapboxgl.accessToken = 'pk.eyJ1Ijoiam9lY291dG8iLCJhIjoiY2xmcHN5NndpMGN0MDN4bmw1ZTQ3N2owNSJ9.Wm1TXO5LIzXcvRPVkLdXJQ';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11?localize=pt',
-      center: [-42.280395, -22.805185],
-      zoom: 9.5
-
-    });
-
-    // remove layes de mapa N necessarias
-    map.on('load', function() {
-      map.removeLayer('road-label');
-      map.removeLayer('poi-label');
-
-    });
-
-    // Adicione marcadores personalizados ao mapa a partir de um arquivo de texto externo
-
-    fetch('https://raw.githubusercontent.com/joenyrcouto/tcc/main/markers.txt')
-      .then(response => response.text())
-      .then(text => {
-        const markers = text.split('\n');
-        const validMarkers = markers.filter(marker => marker.trim() !== '');
-        validMarkers.forEach(marker => {
-          const [lng, lat, title, description] = marker.split(';');
-          new mapboxgl.Marker({ color: 'red' })
-            .setLngLat([lng, lat])
-            .setPopup(new mapboxgl.Popup().setHTML(`<h3>${title}</h3><p>${description}</p>`))
-            .addTo(map);
+        // Create a new map instance
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: [-42.280395, -22.805185],
+            zoom: 9.5
         });
 
-      });
+        // remove layers de mapa não necessárias
+        map.on('load', function() {
+            map.removeLayer('road-label');
+            map.removeLayer('poi-label');
+        });
 
-    // Crie uma instância do objeto Geocoder do Mapbox
+        // Adicionar barra de pesquisa
+        const geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            marker: false, // Desabilita o marcador padrão da pesquisa
+            placeholder: 'Pesquisar local', // Texto de placeholder para o campo de pesquisa
+            language: 'pt-BR', // Define o idioma da pesquisa (opcional)
+            countries: 'br', // Limita a pesquisa a resultados do Brasil (opcional)
+            bbox: [-43.1796, -23.0814, -41.4308, -22.4582] // Define uma bounding box para limitar a área de pesquisa (opcional)
+        });
 
-    var geocoder = new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl,
-      countries: 'br',
-      placeholder: 'Pesquisar endereço ou local'
+        // Posiciona a barra de pesquisa no canto superior direito do mapa
+        map.addControl(geocoder, 'top-right');
 
-    });
+        // Adicionar funcionalidade ao botão de localização
+        const locationButton = document.getElementById('location-button');
+        locationButton.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    const lngLat = [position.coords.longitude, position.coords.latitude];
+                    map.flyTo({
+                        center: lngLat,
+                        zoom: 14
+                    });
+                });
+            } else {
+                alert('Geolocation is not supported by your browser.');
+            }
+        });
 
-    // Adicione o objeto Geocoder ao mapa
-
-    var searchContainer = document.createElement('div');
-    searchContainer.className = 'search-container';
-    searchContainer.appendChild(geocoder.onAdd(map));
-    map.getCanvasContainer().appendChild(searchContainer);
-
-  </script>
-
+        // adicionar novos pontos ao mapa
+        <?php require_once 'pontos.php'; ?>
+    </script>
 </body>
 </html>

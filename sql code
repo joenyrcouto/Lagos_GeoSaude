@@ -1,0 +1,23 @@
+CREATE TABLE pontos (
+  coordenadas VARCHAR(255) PRIMARY KEY,
+  titulo VARCHAR(255),
+  informacoes VARCHAR(255),
+  aparecenomapa BOOLEAN
+);
+
+CREATE TABLE pessoas (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(255),
+  email VARCHAR(255),
+  senha VARCHAR(255),
+  admin BOOLEAN
+);
+
+CREATE TABLE comentario (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  idponto VARCHAR(255),
+  idpessoa INT,
+  texto TEXT,
+  FOREIGN KEY (idponto) REFERENCES pontos(coordenadas),
+  FOREIGN KEY (idpessoa) REFERENCES pessoas(id)
+);

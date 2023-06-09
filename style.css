@@ -13,6 +13,8 @@ html, body {
     width: 100%;
 }
 
+/* css infos dos pontos*/
+
 .popup-title {
     font-weight: bold;
     font-size: 18px;
@@ -41,3 +43,138 @@ html, body {
     color: #555555;
     font-size: 20px;
 }
+
+/* css menu */
+
+.menu-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu-container i {
+    color: #555555;
+    font-size: 20px;
+}
+
+.side-menu {
+    position: absolute;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #f1f1f1;
+    transition: left 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.side-menu ul li:last-child {
+    border-bottom: none;
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: bold;
+}
+
+/* css comentarios, e caixa de texto, das infos dos pontos*/
+
+.comments-container {
+    display: block;
+    width: 85%;
+    height: 50px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    transition: border-color ease-in-out 0.15s, 
+    box-shadow ease-in-out 0.15s;
+    overflow: auto;
+    resize: none;
+    margin-bottom: 5px;
+}
+
+.comment {
+    margin-bottom: 7px; /* Margem inferior opcional para espaçamento entre os comentários */
+}
+
+.form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-control {
+    display: block;
+    width: 85%;
+    height: 50px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    transition: border-color ease-in-out 0.15s, 
+    box-shadow ease-in-out 0.15s;
+    overflow: auto;
+    resize: none;
+  }
+  
+  .btn-primary {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus,
+  .btn-primary:active,
+  .btn-primary.active,
+  .open .dropdown-toggle.btn-primary {
+    color: #ffffff;
+    background-color: #286090;
+    border-color: #204d74;
+  }

@@ -73,14 +73,17 @@ html, body {
     left: -300px;
     width: 300px;
     height: 100%;
-    background-color: #f1f1f1;
+    background-color: rgba(255, 255, 255, 0.35);
     transition: left 0.3s ease-in-out;
     z-index: 2;
-}
-
-.side-menu.open {
+    backdrop-filter: blur(10px); /* Aplica o efeito de desfoque no fundo */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores WebKit */
+  }
+  
+  .side-menu.open {
     left: 0;
-}
+  }
+  
 
 .side-menu ul {
     list-style-type: none;
@@ -178,3 +181,28 @@ html, body {
     background-color: #286090;
     border-color: #204d74;
   }
+
+  /* botao ocultar/mostrar */
+
+  #mug-button {
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1;
+}
+
+#mug-button i {
+    color: #555555;
+    font-size: 20px;
+}
+
+    .hidden {
+        display: none;
+    }

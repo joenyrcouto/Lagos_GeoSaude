@@ -12,13 +12,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pessoa = $stmt->fetch();
 
     if ($pessoa) {
-        echo 'O email fornecido já está cadastrado.';
+        session_start();
+        $_SESSION['login_message'] = [
+            'success' => false,
+            'message' => 'O email fornecido já está cadastrado.'
+        ];
+        header('Location: index.php');
+        exit();
     } else {
         // Insere os dados na tabela de pessoas
         $stmt = $pdo->prepare('INSERT INTO pessoas (nome, email, senha, admin) VALUES (?, ?, ?, false)');
         $stmt->execute([$nome, $email, $senha]);
 
-        echo 'Cadastro realizado com sucesso.';
+        session_start();
+        $_SESSION['login_message'] = [
+            'success' => true,
+            'message' => 'Cadastro realizado com sucesso.'
+        ];
+        header('Location: index.php');
+        exit();
     }
 }
 ?>

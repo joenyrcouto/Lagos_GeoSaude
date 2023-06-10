@@ -2,22 +2,31 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox GL JS Example</title>
+    <title>Mapa Lagos GeoSaude</title>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
 </head>
 <body>
     <div id="map"></div>
+    
     <button id="location-button" class="location-button">
-        <i class="fa-solid fa-location-crosshairs"></i>
-    </button>
+    <i class="fa-solid fa-location-crosshairs"></i>
+</button>
+
+
+
+<a href="https://github.com/joenyrcouto/Lagos_GeoSaude/tree/main" target="_blank" ><button id="mug-button" class="location-button">
+<i class="fa-brands fa-github"></i>
+</button></a>
+
     <div class="menu-container" id="menu-button">
         <i class="fa-solid fa-bars"></i>
     </div>
     <div class="side-menu" id="side-menu">
         <ul>
             <li><a href="index.php">Log In / Sign Up</a></li>
+            <li><a href="listamarcadores.php">Pontos Sugeridos</a></li>
             <li><a href="info.html">Info</a></li>
         </ul>
     </div>
@@ -31,6 +40,7 @@
     />
 
     <script>
+        // token mapbox
         mapboxgl.accessToken = 'pk.eyJ1Ijoiam9lY291dG8iLCJhIjoiY2xmcHN5NndpMGN0MDN4bmw1ZTQ3N2owNSJ9.Wm1TXO5LIzXcvRPVkLdXJQ';
 
         // Create a new map instance
@@ -64,20 +74,24 @@
         map.addControl(geocoder, 'top-right');
 
         // Adicionar funcionalidade ao botão de localização
-        const locationButton = document.getElementById('location-button');
-        locationButton.addEventListener('click', () => {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(position => {
-                    const lngLat = [position.coords.longitude, position.coords.latitude];
-                    map.flyTo({
-                        center: lngLat,
-                        zoom: 14
-                    });
-                });
-            } else {
-                alert('Geolocation is not supported by your browser.');
-            }
+const locationButton = document.getElementById('location-button');
+locationButton.addEventListener('click', () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            const lngLat = [position.coords.longitude, position.coords.latitude];
+            map.flyTo({
+                center: lngLat,
+                zoom: 14
+            });
+
+            const userMarker = new mapboxgl.Marker({ color: 'red' }) // Define a cor do marcador como vermelho
+                .setLngLat(lngLat)
+                .addTo(map);
         });
+    } else {
+        alert('Geolocation is not supported by your browser.');
+    }
+});
 
         // Abrir/fechar o menu lateral
         const menuButton = document.getElementById('menu-button');
@@ -94,21 +108,28 @@
         // adicionar novos pontos ao mapa
         <?php require_once 'pontos.php'; ?>
 
-        // Verificar o clique no mapa
-        map.on('click', function (e) {
-            const latitude = e.lngLat.lat;
-            const longitude = e.lngLat.lng;
 
-            // Verificar se o ponto clicado já existe
-            const features = map.queryRenderedFeatures(e.point, { layers: ['marker-layer'] });
-            if (features.length === 0) {
-                abrirCaixaRegistro(latitude, longitude);
-            } else {
-                const marker = features[0];
-                const popup = marker.getPopup();
-                popup.addTo(map);
-            }
-        });
+    map.on('click', function (e) {
+    const sideMenu = document.getElementById('side-menu');
+    if (sideMenu.classList.contains('open')) {
+        sideMenu.classList.remove('open');
+    } else {
+        const latitude = e.lngLat.lat;
+        const longitude = e.lngLat.lng;
+
+        // Verificar se o ponto clicado já existe
+        const features = map.queryRenderedFeatures(e.point, { layers: ['marker-layer'] });
+        if (features.length === 0) {
+            abrirCaixaRegistro(latitude, longitude);
+        } else {
+            const marker = features[0];
+            const popup = marker.getPopup();
+            popup.addTo(map);
+        }
+    }
+});
+
+
 
         // Função para abrir a caixa de registro
         function abrirCaixaRegistro(latitude, longitude) {

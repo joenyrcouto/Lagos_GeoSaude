@@ -7,6 +7,7 @@
     <style>
         .message {
             padding: 10px;
+            margin-top: 10px;
             margin-bottom: 10px;
             color: #fff;
             font-weight: bold;
@@ -18,8 +19,8 @@
             background-color: #28a745;
         }
 
-        .error {
-          background-color: #ff9800;
+        .warning {
+            background-color: #ff9800;
         }
     </style>
 </head>
@@ -28,15 +29,22 @@
         <?php
         session_start();
 
+        // Exibe as mensagens de erro
+        if (isset($_SESSION['login_message'])) {
+            $message_class = $_SESSION['login_message']['success'] ? 'success' : 'warning';
+            echo '<p class="message ' . $message_class . '">' . $_SESSION['login_message']['message'] . '</p>';
+            unset($_SESSION['login_message']);
+        }
+
         // Verifica se o usuário está conectado
         if (isset($_SESSION['usuario'])) {
             echo '<p class="message success">Você está conectado como ' . $_SESSION['usuario']['nome'] . '. <a href="logout.php">Desconectar</a></p>';
         } else {
-            echo '<p class="message error">Você não está conectado.</p>';
+            echo '<p class="message warning">Você não está conectado.</p>';
         }
 
         // Exibe o link para a página mapa.php
-        echo '<a href="mapa.php" class="btn btn-primary">Ir para o mapa</a>';
+        echo '<a href="mapa.php" class="btn btn-primary" style="margin-bottom: 25px;">Ir para o mapa</a>';
 
         // Exibe os formulários de cadastro e login
         if (!isset($_SESSION['usuario'])) {
@@ -45,30 +53,30 @@
             <form action="cadastrar.php" method="POST">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome:</label>
-                    <input type="text" class="form-control" name="nome" required>
+                    <input type="text" class="form-control" name="nome" required minlength="2" maxlength="20">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name="email" required>
+                    <input type="email" class="form-control" name="email" required minlength="11" maxlength="50">
                 </div>
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" name="senha" required>
+                    <input type="password" class="form-control" name="senha" required minlength="8" maxlength="20">
                 </div>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
-
+            <br>
             <h2>Login</h2>
             <form action="login.php" method="POST">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name="email" required>
+                    <input type="email" class="form-control" name="email" required minlength="11" maxlength="50">
                 </div>
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" name="senha" required>
+                    <input type="password" class="form-control" name="senha" required minlength="8" maxlength="20">
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary" style="margin-bottom: 5px;">Login</button>
             </form>';
         }
         ?>

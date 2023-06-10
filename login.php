@@ -13,10 +13,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($pessoa) {
         session_start();
         $_SESSION['usuario'] = $pessoa;
+
+        // Verifica se a pessoa é um administrador
+        $isAdmin = $pessoa['admin'];
+        $_SESSION['isAdmin'] = $isAdmin;
+
         header('Location: index.php');
         exit();
     } else {
-        echo 'Email ou senha inválidos.';
+        session_start();
+        $_SESSION['login_message'] = [
+            'success' => false,
+            'message' => 'Email ou senha inválidos.'
+        ];
+        header('Location: index.php');
+        exit();
     }
 }
 ?>

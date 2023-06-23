@@ -16,4 +16,4 @@ não modifique aqui, faça fork para modificações próprias, para assim ficar 
 # link do site:
 lagosgeosaude.000.pe
 
-pelo infinityfree
+Hospedado pelo infinityfree.

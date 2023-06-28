@@ -84,7 +84,35 @@
 
         <!-- Botão para voltar à página mapa.php -->
         <a href="mapa.php" class="btn btn-primary mt-4">Voltar ao Mapa</a>
+
+        <!-- Botão para voltar carregar arquivo -->
+        <?php
+        require 'conexao.php';
+
+        session_start();
+            $isAdmin = isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'];
+if ($isAdmin) {
+    echo "
+        <form action='adicionar_pontos.php' method='post' enctype='multipart/form-data' class='mt-4'>
+            <div class='mb-3'>
+                <label for='arquivo' class='form-label'>Enviar arquivo de pontos:</label>
+                <input class='form-control' type='file' id='arquivo' name='arquivo' accept='.txt'>
+            </div>
+            <button type='submit' class='btn btn-primary'>Enviar</button>
+        </form>
+    ";
+}
+
+// Verificar se há uma mensagem na URL
+if (isset($_GET['mensagem'])) {
+    $mensagem = $_GET['mensagem'];
+    // Exibir a mensagem na página
+    echo "<div class='alert alert-info'>$mensagem</div>";
+}
+?>
+
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -18,6 +18,20 @@ function getComentarios($coordenadas) {
 session_start();
 $pessoaConectada = $_SESSION['usuario'] ?? null;
 
+// Verifica se foi enviado um novo comentário
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pessoaConectada) {
+    $coordenadas = $_POST['coordenadas'];
+    $idpessoa = $pessoaConectada['id'];
+    $texto = trim($_POST['comentario']);
+
+    if (!empty($texto)) {
+        inserirComentario($coordenadas, $idpessoa, $texto);
+        // Redireciona de volta à página principal
+        header('Location: mapa.php');
+        exit;
+    }
+}
+
 // Adicione o código JavaScript para impedir que o clique no marcador propague para o mapa
 echo "map.on('load', function() {";
 
@@ -93,17 +107,6 @@ while ($row = $stmt->fetch()) {
 }
 
 echo "});"; // Feche a função on('load')
-
-// Verifica se foi enviado um novo comentário
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pessoaConectada) {
-    $coordenadas = $_POST['coordenadas'];
-    $idpessoa = $pessoaConectada['id'];
-    $texto = trim($_POST['comentario']);
-
-    if (!empty($texto)) {
-        inserirComentario($coordenadas, $idpessoa, $texto);
-    }
-}
 
 // Função para inserir um novo comentário
 function inserirComentario($coordenadas, $idpessoa, $texto) {

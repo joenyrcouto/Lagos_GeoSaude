@@ -10,7 +10,7 @@ não modifique aqui, faça fork para modificações próprias, para assim ficar 
 
 `Bloco3`: nome da instituição (vai ser o título do ponto)
 
-`Bloco4`: informações da instituição, pra quebra de linha, use o br entre <>
+`Bloco4`: informações da instituição, pra quebra de linha, use o ``` <br> ```
 # link do site:
 lagosgeosaude.000.pe
 

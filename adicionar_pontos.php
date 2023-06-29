@@ -4,17 +4,21 @@ require 'conexao.php';
 $mensagem = ''; // Variável para armazenar a mensagem de aviso
 
 if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] === UPLOAD_ERR_OK) {
-    // Ler o conteúdo do arquivo enviado
-    $conteudo = file_get_contents($_FILES['arquivo']['tmp_name']);
-
-    // Dividir o conteúdo em linhas
-    $linhas = explode(PHP_EOL, $conteudo);
-
     $pontosAdicionados = 0; // Contador de pontos adicionados
     $pontosIgnorados = 0; // Contador de pontos ignorados
 
+    $file = fopen($_FILES['arquivo']['tmp_name'], 'r'); // Abrir o arquivo em modo leitura
+
     // Processar cada linha do arquivo
-    foreach ($linhas as $linha) {
+    while (($linha = fgets($file)) !== false) {
+        // Ignorar linhas vazias
+        if (empty($linha)) {
+            continue;
+        }
+
+        // Remover formatações de texto (caracteres especiais, quebras de linha, etc.)
+        $linha = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $linha);
+
         // Dividir a linha em partes usando o ponto-e-vírgula como separador
         $partes = explode(';', $linha);
 
@@ -31,7 +35,7 @@ if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] === UPLOAD_ERR_OK) 
                 // Verificar se já existe um ponto com as mesmas coordenadas no banco de dados
                 $sql = "SELECT COUNT(*) FROM pontos WHERE coordenadas = :coordenadas";
                 $stmt = $pdo->prepare($sql);
-                $stmt->bindValue(':coordenadas', $latitude . ',' . $longitude);
+                $stmt->bindValue(':coordenadas', $latitude . ',' . $longitude, PDO::PARAM_STR);
                 $stmt->execute();
                 $existePonto = $stmt->fetchColumn();
 
@@ -47,15 +51,17 @@ if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] === UPLOAD_ERR_OK) 
                 // Inserir o novo ponto no banco de dados
                 $sql = "INSERT INTO pontos (coordenadas, titulo, informacoes, aparecenomapa) VALUES (:coordenadas, :titulo, :informacoes, 1)";
                 $stmt = $pdo->prepare($sql);
-                $stmt->bindValue(':coordenadas', $latitude . ',' . $longitude);
-                $stmt->bindValue(':titulo', $titulo);
-                $stmt->bindValue(':informacoes', $informacoes);
+                $stmt->bindValue(':coordenadas', $latitude . ',' . $longitude, PDO::PARAM_STR);
+                $stmt->bindValue(':titulo', $titulo, PDO::PARAM_STR);
+                $stmt->bindValue(':informacoes', $informacoes, PDO::PARAM_STR);
                 $stmt->execute();
 
                 $pontosAdicionados++;
             }
         }
     }
+
+    fclose($file); // Fechar o arquivo
 
     $mensagem = "Arquivo processado. Foram adicionados $pontosAdicionados ponto(s) e $pontosIgnorados ponto(s) foram ignorados.";
 } else {

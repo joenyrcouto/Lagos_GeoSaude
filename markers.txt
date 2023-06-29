@@ -1,134 +1,83 @@
 ﻿-22.94286374282392, -42.17922553454347;UNIDADE DE SAÚDE DA FAMÍLIA TEREZA VIEIRA FRANCISCONE;R. São Januário, Arraial do Cabo - RJ <br> Seg-Sáb, 8h-17h
-
-
 -22.965535303715846, -42.0309152396039;Unidade De Saúde Da Família Boa Vista;Alameda Boa Vista - Centro, Arraial do Cabo - RJ <br> Seg-Sex, 8h-17h
-
-
--22.97139779345647, -42.028356643261574;ESF Canaã;Tv. Dallas - Praia Grande, Arraial do Cabo - RJ <br>
-
+-22.97139779345647, -42.028356643261574;ESF Canaã;Tv. Dallas - Praia Grande, Arraial do Cabo - RJ
 
 -22.963900265267302, -42.02465694988071;Posto de Saúde Municipal da Prainha;R. José Pinto de Macedo, 464-556 - Prainha, Arraial do Cabo - RJ <br> Seg-Sex, 8h-17h
 
-
 -22.925754042211256, -42.212487434546254;Posto de Saúde do Sabiá;Av. D, Arraial do Cabo - RJ <br> Seg - Sex, 7:30h - 17:30h
-
 
 -22.941824541128245, -42.17928773269735;Pronto Socorro de Figueira;R. São Januário, 18, Arraial do Cabo - RJ <br> 24h
 
-
 -22.975686722740605, -42.0281341498789;Hospital Geral de Arraial do Cabo;Av. Getúlio Vargas, s/n - Praia Grande, Arraial do Cabo - RJ <br> 24h
-
 
 -22.857597228745053, -42.26613836817534;Unidade Básica De Saúde Bananeiras;Iguabinha, Araruama - RJ <br> Seg-Sex, 7h-16h
 
-
 -22.87205228395412, -42.336819675605625;UPA UNIDADE DE PRONTO ATENDIMENTO DE ARARUAMA;Av. Getúlio Vargas, S/N - Centro, Araruama - RJ <br> 24h
-
 
 -22.86134536409311, -42.33025177678173; UPA Araruama;R. Baster Pilar, s/n - Parque Hotel, Araruama - RJ <br> 24h
 
-
 -22.865298668471883, -42.33520615627254;Saúde Coletiva De Araruama;R. Pedro Luiz Souza, 108 - Centro, Araruama - RJ <br> Seg-Sex, 8h-17h
-
 
 -22.882986554519636, -42.37156070155685;PSF Posto de Saúde da família;R. Joaquim Barbosa, 200-232 - Pte. dos Leites, Araruama - RJ <br> Seg-Sex, 8h-17h
 
-
 -22.859403695188504, -42.33960317997218;Policlínica Da Família;R. Barão de Vassouras, s/n - Mutirão, Araruama - RJ <br> Seg-Sex, 7h-17h
-
 
 -22.85568643219061, -42.323724503903875;Policlinica Municipal da Fazendinha;Parque Alves Branco II, Araruama - RJ <br> 7h as 16h
 
-
 -22.87091418675595, -42.3349219940773;PartMed Saúde Araruama;Av. Brasil, 53 - Centro, Araruama - RJ <br> Seg-Sab, 7h-18h
-
 
 -22.922166403430403, -42.315685157246385;Posto de Saúde da Família de Praia Seca;Estr. de Praia Seca, 6954 - Sao Tome, Araruama - RJ <br> Seg-Sex, 8h-17h
 
-
 -22.812868766551436, -42.3699341493249; PSF Paracatu; Estr. Velha de Rio Bonito, S/N - Morro Grande, Araruama - RJ; seg-sex 7h-16h
-
 
 -22.843834762041396, -42.245710315090285; Posto de Saúde Iguabinha; R. Alm. Guimarães, 10 - Iguabinha, Araruama - RJ <br> seg-sex 7h-16h 
 
-
 -22.830891204768335, -42.35814224951359;Posto de Saúde Itatiquara;Estr. de Morro Grande, 471 - Itatiquara, Araruama - RJ <br> Seg-Sex, 7h-17h
-
 
 -22.865350999264482, -42.34291415632679;Capsi Infantil;R. Ronald de Carvalho - Centro, Araruama - RJ <br> Seg-Sex 7h-17h
 
-
 -22.86432287530596, -42.33527522568939;PAM Araruama;R. Pedro Luiz Souza, 108 - Centro, Araruama - RJ
-
 
 -22.86417105188353, -42.3363985462886;HERC - Hospital Estadual Roberto Chabo;R. Bernardo Vasconcelos, 477 - Centro, Araruama - RJ <br> 24h
 
-
 -22.87460318959813, -42.336838705279696;Hospital Geral Municipal Drª Jaqueline Prates;R. Maj. Felix Moreira, s/n - Centro, Araruama - RJ <br> 24h
-
 
 -22.870096922044674, -42.34276924072609;Hospital Unimed Araruama;Av. Nilo Peçanha, 835 - Centro, Araruama - RJ<br> 24h
 
-
 -22.87401845522929, -42.336121111803564;Fundação Médico Hospitalar São Silvestre;R. Maj. Felix Moreira, 359 - Centro, Araruama - RJ<br> 24h
-
 
 -22.87030924507206, -42.34254112402675; Pronto Socorro HC Lagos;Av. Nilo Peçanha, 835 - Centro, Araruama - RJ <br> 24h
 
-
 -22.867163763273947, -42.33464991271305;CTRA De Terapia Renal De Araruama;R. Eduardo Magno Valadares, 213 - Parque Hotel, Araruama - RJ <br> Seg-Sex, 9h-18h
-
 
 -22.868044986824138, -42.333789171256086; Grupo Med;Av. Getúlio Vargas, 979 - Centro, Araruama - RJ
 
-
 -22.78546918814676, -41.928738389488664;Unidade Básica de Saúde Custódia Alves G A de Oliveira;R. Custódio Alves, 77 - Capão, Búzios - RJ <br> Seg-Sex, 8h-17h
-
 
 -22.759352937664534, -41.89045790556174;Unidade Básica de Saúde Ferradura;Lot. Portal da Ferradura, Búzios - RJ <br> Seg-Sex, 8h-17h
 
-
 -22.77676432660335, -41.928223405399976;Unidade Básica de Saúde Cem Braças;R. Progresso - Bosque, Búzios - RJ <br> Seg-Sex, 7h-17h
 
-
 -22.791672001522535, -41.94866544453897;Unidade Básica de Saúde José Gonçalves;R. Geraldo Martins, Búzios - RJ  <br> Seg-Sab, 7h-17h
-
-
-
-
 -22.78027695221724, -41.94403058774065;Unidade de Saúde da Família Benildo Motta;Estr. dos Búzios - Bosque, Búzios - RJ <br> Seg-Sex, 8h-18h
-
 
 -22.773787679255282, -41.90918332965247;Unidade Básica de Saúde de Geribá e Manguinhos;R. da Redonda, 16 - Manguinhos, Búzios - RJ <br> Seg-Sex, 8h-17h
 
-
 -22.78597459577386, -41.93167096819251;Posto De Saúde Capão;R. Custódio Alves, 629 - Capão, Búzios - RJ <br> Seg-Sex, 7h-17h
-
 
 -22.811391509916966, -41.977816989990565;Unidade Básica de Saúde da Baía Formosa;Est. Álvaro Elidio Gonçalves - Caravelas, Búzios - RJ <br> Seg-Sex, 8h-17h
 
-
 -22.751101699092125, -41.877462605901876;PSF Brava;R. Quinze, 222-380 - Village de Búzios, Búzios - RJ 
-
 
 -22.767247855681905, -41.90132353534515;Policlinica Búzios;100, R. dos Búzios, 2 - Altos de Búzios, Búzios - RJ <br> Seg-Sex, 7h-18h
 
-
 -22.739314451470815, -41.96726770590187;UBS Arpoador Cruzeiro;Rasa, Búzios - RJ <br> Seg-Sex, 7h-17h
-
 
 -22.73741461431223, -41.977567387675876;Posto de Urgência;R. Justiniano de Souza, s/n, Búzios - RJ <br> 24h
 
-
 -22.7787084808158, -41.935453393604426;Clínica Médica Mais Saúde;RJ-102 - Bosque, Búzios - RJ <br> Seg-Sab, 8h-17h
 
-
 -22.77898989111545, -41.93502609233434;Hospital Municipal Dr Rodolpho Perisse;Estr. dos Búzios, S/N - São José, Búzios - RJ <br> 24h
-
-
-
-Rio das Ostras:
-
 -22.484944309259554, -41.91813557293149; Posto de Saúde da Família do Âncora; R. Peperônia - Ancora, Rio das Ostras - RJ <BR> Seg-Sex 8-17h
 
 -22.420532994815428, -42.00649826667993; Posto De Saúde Ezequiel Ferreira Neto; R. Henrique Sarzedas, 1001 - Núcleo Urbano de Rocha Leão, Rio das Ostras - RJ <BR> Seg-Sex 8-17h
@@ -146,7 +95,6 @@ Rio das Ostras:
 -22.50144328195759, -41.929164549342545; Posto de Saúde Jardim Mariléia; R. Nova Friburgo - Jardim Mariléa, Rio das Ostras - RJ <BR> Seg-Sex 8 -17h
 
 -22.51714307537005, -41.93242611550562; Posto de Saúde Nova Esperança; Tv. Grivaldo Martins da Conceição, s/n - Nova Esperança, Rio das Ostras - RJ <BR> Seg-Sex 8-16h
-
 -22.50588380836467, -41.943927427764905; Posto De Saúde Nova Cidade; Av. Inajara, 983-931 - Nova Cidade, Rio das Ostras - RJ <BR> Seg-Sex 8-19h
 
 -22.522693081044782, -41.935344358918066; Posto; Av. Linda, 60 - Centro, Rio das Ostras - RJ <BR> Seg-Sex 8-17h
@@ -171,8 +119,6 @@ Rio das Ostras:
 
 -22.459605964493708, -41.93997935310773; D.RAFFAEL V.RODRIGOS; Rio das Ostras - RJ
 
-
-
 -22.48221042102529, -41.9277913953397; Ubs Bairro Claudio Ribeiro; R. Peperônia - Ancora, Rio das Ostras - RJ <BR> Seg-Sex 8-17h
 
 -22.520431313143696, -41.935773649362865; Casa Hospitalar de Rio das Ostras; Alameda Casimiro de Abreu, 303 - Nova Esperança, Rio das Ostras - RJ <BR> Seg-Sab 8-19h
@@ -188,14 +134,11 @@ Rio das Ostras:
 -22.519460059618098, -41.93978618971191; ÓTICA PROJEÇÃO; R. Bangu, 1258 - Centro, Rio das Ostras - RJ
 
 -22.519777203471595, -41.941803210891706; Unicred Macaé RJ Coop e Cr M dos Médicos de Macaé; R. Laércio Lúcio de Carvalho (Antiga Vila Babel ) - Parque Zabulao, Rio das Ostras - RJ
-
 -22.52774520392102, -41.94845508924889; Clínica Med Laif; R. Piabanha, 61 - Balneário Remanso, Rio das Ostras - RJ
 
 -22.524811764675487, -41.952617877641245; Hospital Mater dei; R. Rio de Janeiro, 192 - Extensão do Bosque, Rio das Ostras - RJ <BR> 24h
 
-São Pedro:
-
--22.820365955747228, -42.10703830010726; Unidade de saúde básico ( posto saúde) Joenir alvares ); R. São João, 52 - Estação, São Pedro da Aldeia - RJ
+-22.820365955747228, -42.10703830010726; Unidade de saúde básico ( posto saúde) Joenir alvares; R. São João, 52 - Estação, São Pedro da Aldeia - RJ
 
 -22.79703367515828, -42.11258194606233; Posto de saúde rua do fogo; R. Eucaliptos, 10 - Santo Antônio, São Pedro da Aldeia - RJ
 
@@ -218,7 +161,6 @@ São Pedro:
 -22.767279102863284, -42.08717606393297; ESF São Mateus; São Pedro da Aldeia - RJ <BR> Seg-Sex 7-16h
 
 -22.82678175438789, -42.10022232772912; Secretaria Municipal de Saúde - São Pedro da Aldeia; R. Antonio Benedito Siqueira, 387 - Centro, São Pedro da Aldeia - RJ <BR> Seg-Sex 8:30-17h
-
 -22.810326172974452, -42.03636429967428; Posto de saúde; Alecrim, São Pedro da Aldeia - RJ <BR> Seg-Sex 7-16h
 
 -22.834330303785542, -42.05476151874755; Unidade de Saúde da Família São João II; R. Mal. Juarez Távora, 168 - São João, São Pedro da Aldeia - RJ
@@ -232,6 +174,7 @@ São Pedro:
 -22.81665020065354, -42.073134764118; Centro Municipal de Fisioterapia de São Pedro da Aldeia; Morro do Milagre, São Pedro da Aldeia - RJ
 
 -22.817498935645357, -42.10225197337711; Fisio Gold - Saúde e Beleza; RJ-140, 1567 - Estação, São Pedro da Aldeia - RJ <BR> Seg-Sex 8-21h
+
 -22.82759462509965, -42.10150507303116; Cgc Fisioterapia; Shoppito Center - Av. São Pedro, 300 - 209 - Centro, São Pedro da Aldeia - RJ <BR> Seg-Sex 8-21h
 
 -22.828860349124003, -42.10013178210525; Orthopride São Pedro da Aldeia; R. Dr. Antônio Alves, 87 - Centro, São Pedro da Aldeia - RJ <BR> Seg-Sex 9-18h
@@ -247,8 +190,6 @@ São Pedro:
 -22.829767185167277, -42.09281235887702; Hospital do Olho Lagos; Rodovia RJ-140, KM 03, Nº 120, Quadra C, Lote 03 e 05 - Fluminense, São Pedro da Aldeia - RJ <BR> Seg-Sex 8-18h
 
 -22.81440116373468, -42.033691943344266; Instituto Deus Onipotente; Estr. do Arruda, 02 - Parque Arruda, São Pedro da Aldeia - RJ
-
-Saquarema:
 
 -22.918116851506017, -42.497416227914165; Posto de Saúde da Família - Saquarema; Centro, Centro, Saquarema - RJ <BR> 24h
 
@@ -326,8 +267,6 @@ Saquarema:
 
 -22.925832937557274, -42.49239739154934; Estratégia saúde da família em Saquarema; R. Rui Barbosa, 160 - Campo Aviacao, Saquarema - RJ
 
-Silva Jardim:
-
 -22.650546053718106, -42.37453566863637; Posto de Saúde; Dos Coqueiros, Silva Jardim - RJ <BR> Seg-Sex 8-18h
 
 -22.627731495452817, -42.411614523635954; Unidade Básica de Saúde Zaerton Martins Neto - UBS Fazenda Brasil; Silva Jardim, RJ
@@ -358,308 +297,198 @@ Silva Jardim:
 
 -22.64338809388731, -42.39447041008121; Hospital pequeno príncipe; Silva Jardim, RJ
 
-Casimiro de Abreu: 
--22.57049077969238, -41.984851510564894; Unidade Básica de Saúde - ESF; R. Nilo Vasconcelos, 121 - Campo Alegre, Casimiro de Abreu - RJ <br>
-
+-22.57049077969238, -41.984851510564894; Unidade Básica de Saúde - ESF; R. Nilo Vasconcelos, 121 - Campo Alegre, Casimiro de Abreu - RJ
 
 -22.58015976298302, -41.98965803073139; Unidade Básica De Saúde Oswaldo Ramos; Barra de São João, Casimiro de Abreu - RJ <br> Seg - Sex 8h-17h
 
-
 -22.47575264613014, -42.20008404382054; Posto De Saúde De Casimiro De Abreu Centro (CREM); Centro, Casimiro de Abreu - RJ <br>
-
 
 -22.524525442306526, -41.99287083699417; Unidade Básica de Saúde (UBS) – Palmital; R. Benedito de Souza, 365 - Palmital, Casimiro de Abreu - RJ <br> Seg - Sex 8h-17h
 
-
 -22.476548401435124, -42.19873145289835; Psf - Centro; R. Nilo Peçanha, 164 - Centro, Casimiro de Abreu - RJ <br> Seg - Sex 9h-17h
-
 
 -22.491623739098284, -42.20091653209979; Hospital Municipal Angela Maria Simões Menezes; R. Pastor Luís Laurentino da Silva, 1292 - Santa Ely, Casimiro de Abreu - RJ <br> 24h
 
-
 -22.479192589889095, -42.201774838926156; Unimed Costa Do Sol - Unidade de Atendimento de Casimiro de Abreu; R. Padre Anchieta, 125 - Centro, Casimiro de Abreu - RJ <br> Seg - Sex 8h-18h
-
-
-Iguaba Grande: 
-
-
 -22.855349951310085, -42.234186578003055; UNIDADE BÁSICA DE SAÚDE IGUABA GRANDE; R. Carolina - Iguaba Pequena, Iguaba Grande - RJ <br> Seg - Sex 8h-17h
-
 
 -22.8283244241049, -42.227471824589855;  Unidade básica de saúde; Boa Vista, Iguaba Grande - RJ<br> 
 
-
 -22.83449468445836, -42.223609443871176; Posto de Saúde Alcino Primo de Medeiros - Centro; R. Profeta Jeremias, 141-179 - Estacao, Iguaba Grande - RJ <br> Seg-Sex 7h-17h
-
 
 -22.83556258573421, -42.22330903648196; UPA - Unidade de Pronto Atendimento Iguaba Grande; R. Profeta Elías - Estacao, Iguaba Grande - RJ <br> 24h 
 
-
 -22.842459429996104, -42.19758282458986; Posto Municipal de Saúde Cidade Nova 2; R. Nossa Sra de Nazarethe, 2001 - Ubas, Iguaba Grande - RJ <br> Seg-Sex 8h-17h
-
 
 -22.833234834401555, -42.23626224732041; Unidade de Saúde da Pedreira; Estr. Vila da Pedreira, 1124 - Pedreira, Iguaba Grande - RJ <br> Seg-Sex 8h-17h
 
-
 -22.835805055068356, -42.223859715804586; UPA - Unidade de Pronto Atendimento Iguaba Grande; R. Profeta Elías - Estacao, Iguaba Grande - RJ <br> 24h
-
 
 -22.83972061439232, -42.226134228894466; Caps; R. Nossa Sra. de Fátima - Centro, Iguaba Grande - RJ <br> 
 
-
 -22.855353801180314, -42.23409912458986; Centro de Referência ao Idoso (CRI) em Iguaba Grande; R. Edson da Costa Duarte, 384 - Iguaba Pequena, Iguaba Grande - RJ <br> 
 
-
 -22.835727495592177, -42.22573009334436; Clínica Lagos; R. Dr. João Vasconcelos, 229 - Centro, Iguaba Grande - RJ <br> Seg-Sex 8h-17h
-
-
-Macaé
-
-
 -22.395326697374397, -41.85816143754867; Unidade Básica De Saúde (Ubs) Imboassica; Rua Ismael Batista Filho, 42 antiga rua A - Imboassica, Macaé - RJ 
-
 
 -22.37494084840365, -41.78548727091594; E.S.F Visconde; R. Zilda Zarur - Sol e Mar, Macaé - RJ <br> Seg-Sex 8h-17h
 
-
 -22.373430666693352, -41.780587888895745; Unidade de Saúde - Drº Ivair Marinho; R. Lauro Gonçalves Pacheco - s/n, RJ
-
 
 -22.329628273179384, -41.7528247241147; Unidade de saúde aeroporto; R. Curunhango, 46 - Parque Aeroporto, Macaé - RJ
 
-
 -22.256941814730578, -42.15967094897436; Unidade Básica de Saúde da Cabeceira do Sana; R. Principal Cabeceira do Sana - Sana, Macaé - RJ
-
 
 -22.357312667413172, -41.76828303500019; UBS - São José do Barreto; Rod. Amaral Peixoto, 187 - Centro, Macaé - RJ
 
-
 -22.356042601347355, -41.801242017222044; Saúde da Família - Esf Campo Do Oeste; R. Venezuela, 132 - Campo D'Oeste, Macaé - RJ 
-
 
 -22.30141881382869, -41.7312041800006; UBS/Barramares / Barreto; R. Raul Seixas - São José do Barreto, Macaé - RJ
 
-
 -22.199736336268476, -42.05392754758955; UBS GLICÉRIO; Glicério, Macaé - RJ Glicério, Macaé - RJ <br> Seg-Sex 8h-17h
-
 
 -22.386520988919855, -41.806735180925685; Posto de Saúde Novo Cavaleiros; R. Vênus, 49 - Granja dos Cavaleiros, Macaé - RJ
 
-
 -22.382711555318156, -41.79574885351839; Posto de Saúde; R. Vênus, 49 - Granja dos Cavaleiros, Macaé - RJ
-
 
 -22.36493281956218, -41.78064265333338; Posto De Saúde; Praia Campista, Macaé - RJ <br> Seg-Sex 8h-17h
 
-
 -22.361122795070802, -41.771029616852005; Estratégia Saúde Da Família - Esf Imbetiba; Rua Dr. Zamenhof, 150 - Imbetiba, Macaé - RJ 
-
 
 -22.305230468553955, -41.75455012574108; UPA do Parque Aeroporto; R. Curunhango, sn - Parque Aeroporto, Macaé - RJ <br> 24h
 
-
 -22.38144172017224, -41.85205378148072; Posto de Saúde de Imboassica; R. A-4, 42 - Imboassica, Macaé - RJ
-
 
 -22.34334130211261, -41.783389235185204; UBS - (Morro de Santana); Rua Leopoldina, R. Maurílio Rosa, s/n° - Aroeira, Macaé - RJ <br> Seg-Sex 7h-18h
 
-
 -22.29466608019489, -41.74686036659688; ESF BARRETO; Parque Aeroporto, Macaé - RJ<br> Seg-Sex 7h-18h
-
 
 -22.33023921244135, -41.768833010286826; Unidade de Pronto Atendimento - Barra de Macaé; Rod. Amaral Peixoto, 1502 - Barra, Macaé - RJ <br> 24h
 
-
 -22.31880598128368, -41.74686035547226; Estratégia Saúde Da Família - Esf Barreto; R. Dois, sn - São José do Barreto, Macaé - RJ 
-
 
 -22.33532034775871, -41.7784460467682; Posto de Saúde Dr. Jorge Caldas; R. Tenente-Coronel Amado, 239 - Centro, Macaé - RJ 
 
-
 -22.340401297950436, -41.81140502899005; Posto de Saúde Municipal do Horto; Estr. Mc-81,  Imboassica, Macaé - RJ <br> Seg-Sex 8h-17h
-
 
 -22.278146909611923, -41.730380864361344; Unidades De Pronto Atendimento (Upa) - Unidade De Pronto Atendimento Do Lagomar; Av. dos Bandeirantes, 725/781 - Lagomar, Macaé - RJ <br> 24h
 
-
 -22.373422959466048, -41.7908056651014; Psf - Virgem Santa; R. Principal - s/n, RJ
-
 
 -22.345482062983297, -41.78393921047184; Centro de Saúde Dr. Jorge Caldas; R. Tenente-Coronel Amado, 225 - Centro, Macaé - RJ,  <br> Temporariamente fechado
 
-
 -22.37428251970469, -41.77777872688142; Hospital São João Batista; Pc Veríssimo Mello, 391 - Centro, Macaé - RJ <br> 24h
-
 
 -22.395869238630116, -41.7909966521428; Unimed; Av. Nossa Sra. da Glória - Cavaleiros, Macaé - RJ 
 
-
 -22.367456610268153, -41.781555276956105; Hospital Unimed Costa do Sol; R. Tenente-Coronel Amado, 401 - Centro, Macaé - RJ <br> 24h
-
 
 -22.37158394435038, -41.77932367918471; Hospital São Lucas - Emergência; R. Euzébio de Queiróz - Centro, Macaé - RJ 
 
-
 -22.393446088587464, -41.80315759510358; Futuras Instalações do Hospital Unimed; Macaé, R. Sidnei Vasconcelos Aguiar, 73 - Glória, Macaé - RJ <br> 24h
-
 
 -22.372811436094075, -41.7779233741500; São Lucas Hospital de Clínicas; R. Teixeira de Gouveia, 789 - Centro, Macaé - RJ <br> 24h
 
-
 -22.353285063563735, -41.80693414517824; Hospital Público Municipal Dr. Fernando Pereira da Silva HPM; Rodovia RJ 168 - Km 4 S/N, Rodovia RJ, Km 4, 168 - Virgem Santa, Macaé - RJ <br> 24h
-
 
 -22.376779876161816, -41.77431848544237; Hospitais - Irmandade De São João Batista; R. Dr. Luiz Bellegard, 391 - Centro, Macaé - RJ 
 
-
 -22.379478350773542, -41.77346017860721; Hospital Infantil; R. Dr. Luiz Bellegard, 540 - Imbetiba, Macaé - RJ 
-
 
 -22.345346731249485, -41.7816999242247; Hospital Nova Holanda; Nova Holanda, Macaé - RJ 
 
-
 -22.35376134912219, -41.80607583834309; HPM - (Irmãs do Horto); 199, R. W Cinco, 1 - Botafogo, Macaé - RJ <br> 24h
-
 
 -22.378684687201922, -41.773975162708304; Pronto Socorro Municipal; R. Dr. Luiz Bellegard, 540 - Imbetiba, Macaé - RJ <br> 24h
 
-
 -22.37265269613794, -41.78255823105985; Uti Neonatal Nícola Albano; R. Mal. Deodoro, 565 - Centro, Macaé - RJ <br> 24h
-
 
 -22.37138276997191, -41.783588199262034; Centro De Dsts; R. Velho Campos - Centro, Macaé - RJ <br> RJ
 
-
 -22.354078871923306, -41.80830743611449; Hospital Público Municipal Dr. Fernando Pereira da Silva (HPM) : Pronto Socorro da Criança; R. J, 168 - Km 4 - Virgem Santa, Macaé - RJ <br> 24h 
-
 
 -22.379637082944665, -41.77363183997424; SUS; Av. Agenor Caldas, 261 - Centro, Macaé - RJ 
 
-
 -22.515916638333007, -41.943754340571694; Unicred Macaé RJ Coop e Cr M dos Médicos; R. Laércio Lúcio de Carvalho (Antiga Vila Babel ) - Parque Zabulao, Rio das Ostras - RJ <br>  Seg-Sex 10h-15h 
-
 
 -22.337262759443153, -41.75635068826842; Pronto Socorro e UBS Aeroporto; R. Prof. Valdir Celem, 196 - Parque Aeroporto, Macaé - RJ <br> 24h 
 
-
 -22.379968135511458, -41.78158490922196; Gilerson; R. Pref. Antônio Curvelo Benjamin, 226-232 - Visconde de Araújo, Macaé - RJ 
-
 
 -22.22917852227429, -42.01902733596514; HPM Serra - HOSPITAL PÚBLICO MUNICIPAL DA SERRA EVANGELINA FLORES DA SILVA; Avenida João, Alameda Manoel Pereira Carneiro da Silva, s/n - Trapiche, Macaé - RJ <br> 24h 
 
-
 -22.367177470221755, -41.7832931564706; Unimed Costa do Sol; R. Tenente-Coronel Amado, 451 - Centro, Macaé - RJ 
-
 
 -22.36685997728015, -41.7860397383431; SAE / CTA; R. Alfredo Backer, 182 - Centro, Macaé - RJ 
 
-
 -22.383209922179233, -41.78209152690139; Unidade de Saúde - Drº Ivair Marinho; R. Lauro Gonçalves Pacheco - s/n, RJ
-
 
 -22.37844800055258, -41.773680119916875, Pronto Socorro Municipal; R. Américo Peixoto, 310 - Imbetiba, Macaé - RJ <br> 24h
 
-
 -22.37495582112409, -41.777628331358585; Irmandade de São João Batista;Praça Veríssimo de Mello, 391 - Centro, Macaé - RJ
-
 
 -22.380828981737064, -41.77333679718281; Hospital Madre Teresa De Calcutá; R. Dr. Luiz Bellegard, 540 - Imbetiba, Macaé
 
-
-Rio Bonito:
-
-
 -22.734424507199847, -42.61679754754199; Posto de Saúde de Viçosa; 28800-000 - Boqueirão, Rio Bonito - RJ 
-
 
 -22.776532289296078, -42.544356450654945; Posto de Saúde (Esperanção); Via Lagos, 130 - Boa Esperança, Rio Bonito - RJ
 
-
 -22.714846353709973, -42.64655042200497; ESF PRAÇA CRUZEIRO; R. Teixeira de Souza - Ipê, Rio Bonito - RJ
 
-
 -22.703444896011707, -42.62492108975908; Secretaria Municipal de Saúde; R. Getúlio Vargas, 109 - Centro, Rio Bonito - RJ
-
 
 -22.734424507199847, -42.61679754754199; Posto de Saúde de Viçosa; 28800-000 - Boqueirão, Rio Bonito - RJ 
 
-
 -22.714846353709973, -42.64655042200497; ESF PRAÇA CRUZEIRO; R. Teixeira de Souza - Ipê, Rio Bonito - RJ
-
 
 -22.703444896011707, -42.62492108975908; Secretaria Municipal de Saúde; R. Getúlio Vargas, 109 - Centro, Rio Bonito - RJ
 
-
 -22.71357957196757, -42.67813611353865; ESF parque indiano; R. Araribóia, 195 - Bazílio, Rio Bonito - RJ <br> Seg-Seg 7h-16h
-
 
 -22.702178008772794, -42.649983649345586; UPA RIO BONITO; 522, R. A, 498 - Mangueirinha, Rio Bonito - RJ 
 
-
 -22.70407833523627, -42.64586377653685; Upa Unidade de Pronto Atendimento; BR-101 - Cidade Nova, Rio Bonito - RJ 
-
 
 -22.710095861726284, -42.63693738545124; Centro De Saúde Do Coração; R. Martinho de Almeida, 222 - Centro, Rio Bonito - RJ <br> Seg-Sex 7h-17h
 
-
 -22.721813443705983, -42.66611981784649; UBS Cajueiro; Rio Bonito, RJ
-
-
 -22.710729270182544, -42.676419499868345; Ubs Parque Indiano; BR-101, 192 - Bazílio, Rio Bonito - RJ
-
 
 -22.810969953117148, -42.37628562200498; PSF Paracatu; Estr. Velha de Rio Bonito, S/N - Morro Grande, Araruama - RJ <br> Seg-Sex 8h-17h 
 
-
 -22.713211816985872, -42.63610651294123; PSF - Ipê/Monteiro Lobato; R. B, 68-110 - Conj Habt Monteiro Lobato, Rio Bonito - RJ <br> Seg-Sex 8h-17h
-
 
 -22.680181925604135, -42.533748667473155; ESF Sambê colina; Rio Bonito, RJ
 
-
 -22.69538624004439, -42.63331226035108; Qualymed Medicina do Trabalho Rio Bonito; Rua Dr. Mattos,44 Quarto Andar - Centro, Rio Bonito - RJ
-
 
 -22.694119278269824, -42.627819096606096; Hospital Regional Darcy Vargas; R. João do Carmo, 110 - Centro, Rio Bonito - RJ <br> 24h
 
-
 -21.703871453228317, -41.325805498541826; UBS - Félix Miranda; R. Rio Bonito, 158 - Guarus, Campos dos Goytacazes - RJ
-
 
 -22.685985619330754, -42.62180174386058; MATRIZ SMS MEDICINA E SEGURANÇA DO TRABALHO, AO LADO DO SUPERMERCADO ARMAZÉM; Rua Nilo Peçanha, 27 - 204 - Centro, Rio Bonito - RJ <br> Seg-Sex  8h-18h
 
-
 -22.701822739534446, -42.618368516519965; Oraldents Rio Bonito; R. da Conceição, S/N - Centro, Rio Bonito - RJ <br> Seg-Sex 8h-18h
-
 
 -22.701741848971707, -42.63977579854183; Hemonúcleo Rio Bonito; Mangueirinha, Rio Bonito - RJ <br> Seg-Sex 8h-11:30h
 
-
 -22.695407216827274, -42.647328898691185; Médico de Família; R. A, 454-496 - Mangueirinha, Rio Bonito - RJ <br> Seg-Sex 10h-17h
-
 
 -22.69350677011213, -42.62741618007591; WIN Odontologia e Saúde; R. Des. Itabaiana de Oliveira, 106 - Loja 9 - Centro, Rio Bonito - RJ <br> Seg-Sex 9h-18:30h sáb: 9h-13h 
 
-
 -22.697941104887533, -42.62604288913966; Viver Med; R. João do Carmo, 206 - Centro, Rio Bonito - RJ <br> Seg-Sex 8h-18h
-
 
 -22.699208031316935, -42.629476116480284; Clínica da Alma; Rua Ten Celso Carlos, R. Ten-Cel. José C. Marinho, 30 - casa 6 - Centro, Rio Bonito - RJ <br> Seg-Sex 8h-18h
 
-
 -22.69287328199935, -42.61986307992655; CORB-Centro Médico e Ortopédico; Rio Bonito Ltda, Tv Bel Lopes, 96 Centro. - Ao lado da Receita Federal, Rio Bonito - RJ <br> Seg-Sex 8h-17h
-
 
 -22.690339300260042, -42.65007548052399; Clínica da Família - Dr. Mário José do Nascimento Lage; BR-101, 120 - Mangueirinha, Rio Bonito - RJ <br> Seg-Sex 8h-17h
 
-
 -22.703008740294585, -42.62398295273529; Medclin; R. Oswaldo Cruz, 185 - Centro, Rio Bonito - RJ
-
 
 -22.701108398989472, -42.62466959820341; Amiga odontologia; R. Quinze de Novembro, 110 - 1º andar - Centro, Rio Bonito - RJ <br> Seg-Sex 8h-18h Sáb-8h-13h
 
-
--26.89683566273795, -48.70022842573308, UBS - Unidade Básica de Saúde Rio Bonito, 
+-26.89683566273795, -48.70022842573308; UBS - Unidade Básica de Saúde; Rio Bonito
 
 -22.70789088493451, -42.65649790119115; Hospital Colônia de Rio Bonito; R. A, 1268-1418 - Mangueirinha, Rio Bonito - RJ <br> Dom 8h-12h
 

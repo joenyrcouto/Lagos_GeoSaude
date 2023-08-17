@@ -130,46 +130,52 @@ locationButton.addEventListener('click', () => {
     }
 });
 
+let currentPopup; // Variável para manter o popup atual
 
+// Função para abrir a caixa de registro
+function abrirCaixaRegistro(latitude, longitude) {
+    if (currentPopup) {
+        currentPopup.remove(); // Remove o popup anterior, se houver
+    }
 
-        // Função para abrir a caixa de registro
-        function abrirCaixaRegistro(latitude, longitude) {
-            const popup = new mapboxgl.Popup({
-                closeButton: true,
-                className: 'popup',
-                anchor: 'bottom'
-            });
+    const popup = new mapboxgl.Popup({
+        closeButton: false,
+        className: 'popup',
+        anchor: 'bottom'
+    });
 
-            popup.setHTML(`
-                <div class='popup-title'><h3>Registrar Ponto</h3></div>
-                <div class='popup-content'>
-                    <form method='POST' action='registrar_ponto.php'>
-                        <input type='hidden' name='latitude' value='${latitude}'>
-                        <input type='hidden' name='longitude' value='${longitude}'>
-                        <div class='form-group'>
-                            <label for='titulo'>Título:</label>
-                            <input type='text' name='titulo' id='titulo' required>
-                        </div>
-                        <div class='form-group'>
-                            <label for='informacoes'>Informações:</label>
-                            <textarea class='form-control' name='comentario' required></textarea>
-                        </div>
-                        <button type='submit' class='btn btn-primary'>Registrar</button>
-                    </form>
+    popup.setHTML(`
+        <div class='popup-title'><h3>Registrar Ponto</h3></div>
+        <div class='popup-content'>
+            <form method='POST' action='registrar_ponto.php'>
+                <input type='hidden' name='latitude' value='${latitude}'>
+                <input type='hidden' name='longitude' value='${longitude}'>
+                <div class='form-group'>
+                    <label for='titulo'>Título:</label>
+                    <input type='text' name='titulo' id='titulo' required>
                 </div>
-            `);
+                <div class='form-group'>
+                    <label for='informacoes'>Informações:</label>
+                    <textarea class='form-control' name='comentario' required></textarea>
+                </div>
+                <button type='submit' class='btn btn-primary'>Registrar</button>
+            </form>
+        </div>
+    `);
 
-            const marker = new mapboxgl.Marker({ color: 'green' }) // Define a cor do marcador como verde
-                .setLngLat([longitude, latitude])
-                .setPopup(popup)
-                .addTo(map);
+    const marker = new mapboxgl.Marker({ color: 'green' }) // Define a cor do marcador como verde
+        .setLngLat([longitude, latitude])
+        .setPopup(popup)
+        .addTo(map);
 
-            marker.togglePopup(); // Abrir a caixa do marcador imediatamente
+    marker.togglePopup(); // Abrir a caixa do marcador imediatamente
+    currentPopup = popup;
 
-            popup.on('close', () => {
-                marker.remove(); // Remover o marcador ao fechar a caixa
-            });
-        }
+    popup.on('close', () => {
+        currentPopup = null; // Limpa a referência ao popup atual
+        marker.remove(); // Remover o marcador ao fechar a caixa
+    });
+}
     </script>
 </body>
 </html>

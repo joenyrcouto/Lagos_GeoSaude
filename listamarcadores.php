@@ -78,7 +78,7 @@
             echo "</tbody>";
             echo "</table>";
         } else {
-            echo "<p class='mt-4'>Não há pontos para exibir.</p>";
+            echo "<p class='mt-4'>Não há pontos para exibir (Vá ao mapa e clique neste para abrir um formulário de sugestão de ponto)!!</p>";
         }
         ?>
 
@@ -89,7 +89,6 @@
         <?php
         require 'conexao.php';
 
-        session_start();
             $isAdmin = isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'];
 if ($isAdmin) {
     echo "

@@ -15,11 +15,13 @@
     <i class="fa-solid fa-location-crosshairs"></i>
 </button>
 
-
-
 <a href="https://github.com/joenyrcouto/Lagos_GeoSaude/tree/main" target="_blank" ><button id="mug-button" class="location-button">
 <i class="fa-brands fa-github"></i>
 </button></a>
+
+<button id="toggleButton" style="display: none; bottom: 130px;" class="location-button">
+<i class="fa fa-eye"></i>
+</button>
 
     <div class="menu-container" id="menu-button">
         <i class="fa-solid fa-bars"></i>
@@ -28,7 +30,7 @@
         <ul>
             <li><a href="index.php">Log In / Sign Up</a></li>
             <li><a href="listamarcadores.php">Pontos Sugeridos</a></li>
-            <li><a href="info.html">Info</a></li>
+            <li><a href="#">Info (em breve)</a></li>
         </ul>
     </div>
 
@@ -68,7 +70,7 @@
             placeholder: 'Pesquisar local',
             language: 'pt-BR',
             countries: 'br',
-            bbox: [-43.1796, -23.0814, -41.4308, -22.4582] // limitar área
+            bbox: [-43.1796, -23.0814, -41.4308, -22.4582] // limitar áreaz
         });
 
         // Posiciona a barra de pesquisa no canto superior direito do mapa
@@ -109,8 +111,7 @@ locationButton.addEventListener('click', () => {
         // adicionar novos pontos ao mapa
         <?php require_once 'pontos.php'; ?>
 
-
-    map.on('click', function (e) {
+        map.on('click', function (e) {
     const sideMenu = document.getElementById('side-menu');
     if (sideMenu.classList.contains('open')) {
         sideMenu.classList.remove('open');
@@ -118,17 +119,29 @@ locationButton.addEventListener('click', () => {
         const latitude = e.lngLat.lat;
         const longitude = e.lngLat.lng;
 
-        // Verificar se o ponto clicado já existe
-        const features = map.queryRenderedFeatures(e.point, { layers: ['marker-layer'] });
-        if (features.length === 0) {
-            abrirCaixaRegistro(latitude, longitude);
+        // Verificar se a caixa de informações de pontos registrados está aberta
+        const infoPopup = document.querySelector('.mapboxgl-popup');
+        if (infoPopup) {
+            // Se a caixa de informações estiver aberta, feche-a
+            infoPopup.remove();
         } else {
-            const marker = features[0];
-            const popup = marker.getPopup();
-            popup.addTo(map);
+            // Se a caixa de informações não estiver aberta, verifique se o ponto clicado já existe
+            const features = map.queryRenderedFeatures(e.point, { layers: ['marker-layer'] });
+            if (features.length === 0) {
+                abrirCaixaRegistro(latitude, longitude);
+            } else {
+                const marker = features[0];
+                const popup = marker.getPopup();
+                
+                if (!popup.isOpen()) {
+                    // Se a caixa do marcador não estiver aberta, abra-a
+                    popup.addTo(map);
+                }
+            }
         }
     }
 });
+
 
 let currentPopup; // Variável para manter o popup atual
 
@@ -148,14 +161,14 @@ function abrirCaixaRegistro(latitude, longitude) {
         <div class='popup-title'><h3>Registrar Ponto</h3></div>
         <div class='popup-content'>
             <form method='POST' action='registrar_ponto.php'>
-                <input type='hidden' name='latitude' value='${latitude}'>
-                <input type='hidden' name='longitude' value='${longitude}'>
+                <input type='hidden' name='latitude' value='${longitude}'>
+                <input type='hidden' name='longitude' value='${latitude}'>
                 <div class='form-group'>
                     <label for='titulo'>Título:</label>
                     <input type='text' name='titulo' id='titulo' required>
                 </div>
                 <div class='form-group'>
-                    <label for='informacoes'>Informações:</label>
+                    <label for='informacoes'>Informações (Endereço e horário de funcionamento):</label>
                     <textarea class='form-control' name='comentario' required></textarea>
                 </div>
                 <button type='submit' class='btn btn-primary'>Registrar</button>

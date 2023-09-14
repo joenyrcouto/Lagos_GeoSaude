@@ -22,6 +22,14 @@
         .warning {
             background-color: #ff9800;
         }
+
+        .panel {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
@@ -46,38 +54,47 @@
         // Exibe o link para a página mapa.php
         echo '<a href="mapa.php" class="btn btn-primary" style="margin-bottom: 25px;">Ir para o mapa</a>';
 
-        // Exibe os formulários de cadastro e login
+        // Exibe os formulários de cadastro e login em "painéis flutuantes"
         if (!isset($_SESSION['usuario'])) {
             echo '
-            <h2>Cadastro</h2>
-            <form action="cadastrar.php" method="POST">
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome:</label>
-                    <input type="text" class="form-control" name="nome" required minlength="2" maxlength="20">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel">
+                        <h2>Cadastro</h2>
+                        <form action="cadastrar.php" method="POST">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome:</label>
+                                <input type="text" class="form-control" name="nome" required minlength="2" maxlength="20">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" class="form-control" name="email" required minlength="11" maxlength="50">
+                            </div>
+                            <div class="mb-3">
+                                <label for="senha" class="form-label">Senha:</label>
+                                <input type="password" class="form-control" name="senha" required minlength="8" maxlength="20">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name="email" required minlength="11" maxlength="50">
+                <div class="col-md-6">
+                    <div class="panel">
+                        <h2>Login</h2>
+                        <form action="login.php" method="POST">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" class="form-control" name="email" required minlength="11" maxlength="50">
+                            </div>
+                            <div class="mb-3">
+                                <label for="senha" class="form-label">Senha:</label>
+                                <input type="password" class="form-control" name="senha" required minlength="8" maxlength="20">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="senha" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" name="senha" required minlength="8" maxlength="20">
-                </div>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </form>
-            <br>
-            <h2>Login</h2>
-            <form action="login.php" method="POST">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name="email" required minlength="11" maxlength="50">
-                </div>
-                <div class="mb-3">
-                    <label for="senha" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" name="senha" required minlength="8" maxlength="20">
-                </div>
-                <button type="submit" class="btn btn-primary" style="margin-bottom: 5px;">Login</button>
-            </form>';
+            </div>';
         }
         ?>
     </div>

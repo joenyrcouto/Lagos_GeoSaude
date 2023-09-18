@@ -100,6 +100,13 @@ while ($row = $stmt->fetch()) {
     echo "}";
     echo "marker.togglePopup();";
     echo "currentPopup = marker.getPopup();";
+    echo "var windowHeight = window.innerHeight;";
+echo "var mapHeight = map.getCanvas().clientHeight;";
+echo "var relativeOffset = (windowHeight - mapHeight) / windowHeight;";
+echo "map.easeTo({
+        center: [marker.getLngLat().lng, marker.getLngLat().lat + relativeOffset * 0.01], // Ajuste conforme necessário
+        zoom: 14 // Zoom desejado
+    });";
     echo "}";
     echo "});";
 

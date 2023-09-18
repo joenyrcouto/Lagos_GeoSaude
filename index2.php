@@ -104,7 +104,7 @@ locationButton.addEventListener('click', () => {
         });
 
         // adicionar novos pontos ao mapa
-        <?php require_once 'pontos.php'; ?>
+        <?php require_once 'pontos_indicados.php'; ?>
 
         // Obtém o elemento do botão pelo ID
         var toggleButton = document.getElementById('toggleButton');
@@ -112,7 +112,7 @@ locationButton.addEventListener('click', () => {
         // Adiciona um ouvinte de evento de clique ao botão
         toggleButton.addEventListener('click', function() {
             // Define a URL para a qual você deseja redirecionar a página
-            var novaURL = 'index2.php'; // Substitua com a URL desejada
+            var novaURL = 'index.php'; // Substitua com a URL desejada
 
             // Redireciona para a nova URL
             window.location.href = novaURL;
@@ -168,7 +168,7 @@ function abrirCaixaRegistro(latitude, longitude) {
     popup.setHTML(`
         <div class='popup-title'><h3>Registrar Ponto</h3></div>
         <div class='popup-content'>
-            <form method='POST' action='registrar_ponto.php'>
+            <form method='POST' action='registrar_ponto2.php'>
                 <input type='hidden' name='latitude' value='${longitude}'>
                 <input type='hidden' name='longitude' value='${latitude}'>
                 <div class='form-group'>

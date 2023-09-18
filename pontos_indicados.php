@@ -49,7 +49,7 @@ while ($row = $stmt->fetch()) {
     $comentarios = getComentarios($row['coordenadas']);
 
     echo "(function() {"; // Função anônima para criar um escopo separado para cada marcador
-    echo "var marker = new mapboxgl.Marker()"
+    echo "var marker = new mapboxgl.Marker({ color: 'yellow' })"
         . ".setLngLat([$coordenadas[0], $coordenadas[1]])"
         . ".setPopup(new mapboxgl.Popup({
             closeButton: false,
@@ -58,10 +58,10 @@ while ($row = $stmt->fetch()) {
         }).setHTML(`
             <div class='popup-title'><h3>$titulo</h3></div>
             <div class='popup-info'>$informacoes</div>
-            <div class='popup-comments'>
-                <div class='popup-title'><h3>Comentários</h3></div>";
+            <div class='popup-comments'>";
+               /* <div class='popup-title'><h3>Comentários</h3></div>"; */
 
-    if (!empty($comentarios)) {
+    /* if (!empty($comentarios)) {
         echo "<div class='comments-container'>";
         foreach ($comentarios as $comentario) {
             echo "<div class='comment'>
@@ -83,7 +83,7 @@ while ($row = $stmt->fetch()) {
               </form>";
     } else {
         echo "<p><strong>Faça login para deixar um comentário.</strong></p>";
-    }
+    } */
 
     echo "`
         )).addTo(map);\n";
@@ -100,6 +100,13 @@ while ($row = $stmt->fetch()) {
     echo "}";
     echo "marker.togglePopup();";
     echo "currentPopup = marker.getPopup();";
+    echo "var windowHeight = window.innerHeight;";
+echo "var mapHeight = map.getCanvas().clientHeight;";
+echo "var relativeOffset = (windowHeight - mapHeight) / windowHeight;";
+echo "map.easeTo({
+        center: [marker.getLngLat().lng, marker.getLngLat().lat + relativeOffset * 0.01], // Ajuste conforme necessário
+        zoom: 14 // Zoom desejado
+    });";
     echo "}";
     echo "});";
 

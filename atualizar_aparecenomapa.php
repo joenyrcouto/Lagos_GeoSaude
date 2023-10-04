@@ -20,12 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $coordenadas = $_POST['coordenadas'];
         $aparecenomapa = $_POST['aparecenomapa'];
 
-        // Inverte a ordem das coordenadas
-        $coordenadasInvertidas = implode(',', array_reverse(explode(',', $coordenadas)));
-
         // Executa o comando UPDATE para atualizar o campo aparecenomapa e as coordenadas
         $stmt = $pdo->prepare('UPDATE pontos SET aparecenomapa = ?, coordenadas = ? WHERE coordenadas = ?');
-        $stmt->execute([$aparecenomapa, $coordenadasInvertidas, $coordenadas]);
+        $stmt->execute([$aparecenomapa, $coordenadas, $coordenadas]);
 
         // Redireciona de volta para a página anterior
         header('Location: listamarcadores.php');

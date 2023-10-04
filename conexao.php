@@ -6,7 +6,7 @@ $senha = '';
 $banco = 'tcc2';
 
 try {
-    $pdo = new PDO("mysql:host=$host:3307;dbname=$banco;charset=utf8mb4", $usuario, $senha);
+    $pdo = new PDO("mysql:host=$host:3306;dbname=$banco;charset=utf8mb4", $usuario, $senha);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);

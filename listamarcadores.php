@@ -78,18 +78,17 @@
             echo "</tbody>";
             echo "</table>";
         } else {
-            echo "<p class='mt-4'>Não há pontos para exibir.</p>";
+            echo "<p class='mt-4'>Não há pontos para exibir (Vá ao mapa e clique neste para abrir um formulário de sugestão de ponto)!!</p>";
         }
         ?>
 
-        <!-- Botão para voltar à página mapa.php -->
-        <a href="mapa.php" class="btn btn-primary mt-4">Voltar ao Mapa</a>
+        <!-- Botão para voltar à página mapa -->
+        <a href="index.php" class="btn btn-primary mt-4">Voltar ao Mapa</a>
 
         <!-- Botão para voltar carregar arquivo -->
         <?php
         require 'conexao.php';
 
-        session_start();
             $isAdmin = isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'];
 if ($isAdmin) {
     echo "

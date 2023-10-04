@@ -91,16 +91,22 @@ html, body {
     margin: 0;
 }
 
-.side-menu ul li {
+.side-menu ul a li {
     padding: 10px 20px;
+}
+
+.side-menu ul a li:hover {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: rgb(180, 235, 255);
+}
+
+.side-menu ul a li:last-child {
+    border-bottom: none;
     border-bottom: 1px solid #ccc;
 }
 
-.side-menu ul li:last-child {
-    border-bottom: none;
-}
-
-.side-menu ul li a {
+.side-menu ul a {
     text-decoration: none;
     color: #555555;
     font-weight: bold;
@@ -120,8 +126,8 @@ html, body {
     background-image: none;
     border: 1px solid #cccccc;
     border-radius: 4px;
-    transition: border-color ease-in-out 0.15s, 
-    box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s; 
+    box-shadow: ease-in-out 0.15s;
     overflow: auto;
     resize: none;
     margin-bottom: 5px;

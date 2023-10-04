@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $isAdmin = $pessoa['admin'];
         $_SESSION['isAdmin'] = $isAdmin;
 
-        header('Location: index.php');
+        header('Location: logar.php');
         exit();
     } else {
         session_start();
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'success' => false,
             'message' => 'Email ou senha inválidos.'
         ];
-        header('Location: index.php');
+        header('Location: logar.php');
         exit();
     }
 }

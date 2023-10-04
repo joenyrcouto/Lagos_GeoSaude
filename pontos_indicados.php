@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pessoaConectada) {
     if (!empty($texto)) {
         inserirComentario($coordenadas, $idpessoa, $texto);
         // Redireciona de volta à página principal
-        header('Location: index.php');
+        header('Location: mapa.php');
         exit;
     }
 }
@@ -39,7 +39,7 @@ echo "map.on('load', function() {";
 echo "var currentPopup = null;";
 
 // Retrieve data from the database
-$stmt = $pdo->query("SELECT * FROM pontos WHERE aparecenomapa = 1");
+$stmt = $pdo->query("SELECT * FROM pontos WHERE aparecenomapa = 0");
 while ($row = $stmt->fetch()) {
     $coordenadas = explode(',', $row['coordenadas']);
     $titulo = $row['titulo'];
@@ -49,7 +49,7 @@ while ($row = $stmt->fetch()) {
     $comentarios = getComentarios($row['coordenadas']);
 
     echo "(function() {"; // Função anônima para criar um escopo separado para cada marcador
-    echo "var marker = new mapboxgl.Marker()"
+    echo "var marker = new mapboxgl.Marker({ color: 'yellow' })"
         . ".setLngLat([$coordenadas[0], $coordenadas[1]])"
         . ".setPopup(new mapboxgl.Popup({
             closeButton: false,
@@ -58,10 +58,10 @@ while ($row = $stmt->fetch()) {
         }).setHTML(`
             <div class='popup-title'><h3>$titulo</h3></div>
             <div class='popup-info'>$informacoes</div>
-            <div class='popup-comments'>
-                <div class='popup-title'><h3>Comentários</h3></div>";
+            <div class='popup-comments'>";
+               /* <div class='popup-title'><h3>Comentários</h3></div>"; */
 
-    if (!empty($comentarios)) {
+    /* if (!empty($comentarios)) {
         echo "<div class='comments-container'>";
         foreach ($comentarios as $comentario) {
             echo "<div class='comment'>
@@ -83,7 +83,7 @@ while ($row = $stmt->fetch()) {
               </form>";
     } else {
         echo "<p><strong>Faça login para deixar um comentário.</strong></p>";
-    }
+    } */
 
     echo "`
         )).addTo(map);\n";

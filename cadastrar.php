@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'success' => false,
             'message' => 'O email fornecido já está cadastrado.'
         ];
-        header('Location: index.php');
+        header('Location: logar.php');
         exit();
     } else {
         // Insere os dados na tabela de pessoas
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'success' => true,
             'message' => 'Cadastro realizado com sucesso.'
         ];
-        header('Location: index.php');
+        header('Location: logar.php');
         exit();
     }
 }

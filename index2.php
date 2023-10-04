@@ -10,14 +10,6 @@
 </head>
 <body>
     <div id="map"></div>
-
-    <div id="info-panel" class="info-panel">
-    <!-- O conteúdo do painel será atualizado aqui -->
-    </div>
-
-    <button id="toggleButton" style="bottom: 130px;" class="location-button">
-<i class="fa fa-eye"></i>
-</button>
     
     <button id="location-button" class="location-button">
     <i class="fa-solid fa-location-crosshairs"></i>
@@ -26,6 +18,10 @@
 <a href="https://github.com/joenyrcouto/Lagos_GeoSaude/tree/main" target="_blank" ><button id="mug-button" class="location-button">
 <i class="fa-brands fa-github"></i>
 </button></a>
+
+<button id="toggleButton" style="bottom: 130px;" class="location-button">
+<i class="fa fa-eye"></i>
+</button>
 
     <div class="menu-container" id="menu-button">
         <i class="fa-solid fa-bars"></i>
@@ -109,7 +105,7 @@ locationButton.addEventListener('click', () => {
         });
 
         // adicionar novos pontos ao mapa
-        <?php require_once 'pontos.php'; ?>
+        <?php require_once 'pontos_indicados.php'; ?>
 
         // Obtém o elemento do botão pelo ID
         var toggleButton = document.getElementById('toggleButton');
@@ -117,7 +113,7 @@ locationButton.addEventListener('click', () => {
         // Adiciona um ouvinte de evento de clique ao botão
         toggleButton.addEventListener('click', function() {
             // Define a URL para a qual você deseja redirecionar a página
-            var novaURL = 'index2.php'; // Substitua com a URL desejada
+            var novaURL = 'index.php'; // Substitua com a URL desejada
 
             // Redireciona para a nova URL
             window.location.href = novaURL;

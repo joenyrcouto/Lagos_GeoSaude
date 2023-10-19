@@ -104,7 +104,7 @@ while ($row = $stmt->fetch()) {
 echo "var mapHeight = map.getCanvas().clientHeight;";
 echo "var relativeOffset = (windowHeight - mapHeight) / windowHeight;";
 echo "map.easeTo({
-        center: [marker.getLngLat().lng, marker.getLngLat().lat + relativeOffset * 0.01], // Ajuste conforme necessário
+        center: [marker.getLngLat().lng, marker.getLngLat().lat + relativeOffset * 0.01+0.006], // Ajuste conforme necessário
         zoom: 14 // Zoom desejado
     });";
     echo "}";

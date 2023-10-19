@@ -11,10 +11,6 @@
 <body>
     <div id="map"></div>
 
-    <div id="info-panel" class="info-panel">
-    <!-- O conteúdo do painel será atualizado aqui -->
-    </div>
-
     <button id="toggleButton" style="bottom: 130px;" class="location-button">
 <i class="fa fa-eye"></i>
 </button>
@@ -33,9 +29,10 @@
 
     <div class="side-menu" id="side-menu">
     <ul style="text-align:center;">
+        <a href="#"><li>Sobre a página (em breve)</li></a>
+        <a href="howtouse.html"><li>Como usar a página</li></a>
         <a href="logar.php"><li>Log In / Sign Up</li></a>
         <a href="listamarcadores.php"><li>Pontos Sugeridos</li></a>
-        <a href="#"><li>Info (em breve)</li></a>
     </ul>
 </div>
 
@@ -75,7 +72,7 @@
             placeholder: 'Pesquisar local',
             language: 'pt-BR',
             countries: 'br',
-            bbox: [-43.1796, -23.0814, -41.4308, -22.4582] // limitar áreaz
+            bbox: [-43.1796, -23.0814, -41.4308, -22.4582] // limitar área
         });
 
         // Posiciona a barra de pesquisa no canto superior direito do mapa
@@ -208,7 +205,7 @@ function abrirCaixaRegistro(latitude, longitude) {
 
     // Ajustar a visão do mapa para mostrar completamente o popup
     map.easeTo({
-        center: [longitude, latitude],
+        center: [longitude, latitude+0.005],
         zoom: 14 // Zoom desejado
     });
 }

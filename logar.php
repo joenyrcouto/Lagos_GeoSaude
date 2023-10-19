@@ -34,7 +34,7 @@
         }
 
         .panel {
-            background-color: #cdc2ff99;
+            background-color: rgba(120, 190, 200, 0.89);
             border: 1px solid #ccc;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             padding: 20px;

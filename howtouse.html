@@ -4,9 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <title>Como usar o site</title>
 </head>
-<body>
-    <a href="index.php" class="btn btn-primary mt-4" style="margin-left: 20px;">Voltar ao Mapa</a>
+<style>
+        container {display: flex;
+                   align-items: center;
+                   justify-content: center;}
+        .itens {flex: 1;}
+        i {font-size: 120px;}
+        .divfa {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        .divtexto { padding-right: 150px;}
+        .titulo {font-size: 90px;
+        font-weight: 800;
+        padding-top: 15px;
+        padding-bottom: 80px;}
+        .containerpai {
+            background-color: whitesmoke;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+        }
+        img {border: 5px solid #1d1d1d;
+        border-radius: 20px;}
+</style>
+<body style="background-color: rgb(96, 218, 255);">
+
+<div class="containerpai">
+    <div style="text-align: center;">
+        <h1 class="titulo">Ferramentas do mapa</h1>
+    </div>
+
+    <container>
+        <div class="itens divfa">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="itens divtexto">
+            <h2>Menu de navegação das páginas.</h2>
+        </div>
+    </container>
+
+    <container>
+        <div class="itens divfa">
+            <i class="fa fa-eye"></i>
+        </div>
+
+        <div class="itens divtexto">
+            <h2>Mudar visibilidade dos pontos entre adicionados e sugeridos.</h2>
+        </div>
+    </container>
+    
+    <container>
+        <div class="itens divfa">
+            <i class="fa-brands fa-github"></i>
+        </div>
+
+        <div class="itens divtexto">
+            <h2>Abrir página codigo fonte do site no github.</h2>
+        </div>
+    </container>
+
+    <container>
+        <div class="itens divfa">
+            <i class="fa-solid fa-location-crosshairs"></i>
+        </div>
+
+        <div class="itens divtexto">
+            <h2>Localizar usuário no mapa.</h2>
+        </div>
+    </container>
+</div>
+
+<div class="containerpai">
+    <div style="text-align: center;">
+        <h1 class="titulo">Eventos do mapa</h1>
+    </div>
+
+    <container>
+        <div class="itens divfa">
+            <img src="imagens/ponto.jpeg" alt="">
+        </div>
+
+        <div class="itens divtexto">
+            <h2>Marcadores azuis são pontos com informações (nome, rua, cidade, estado, horário e avaliações) de instituições médicas já verificadas e adicionadas ao mapa. É possível interagir com este, ao avaliar, deixando um comentário com  sua respectiva nota. Cada usuário só pode avaliar uma vez cada ponto.</h2>
+        </div>
+    </container>
+
+    <container>
+        <div class="itens divfa">
+            <img src="imagens/registrar.jpeg" alt="">
+        </div>
+
+        <div class="itens divtexto">
+            <h2>Ao apertar no mapa, abre-se um marcador verde para colocar informações (nome, rua, cidade, estado, horário e avaliações) de instituições médicas, para estas serem sugeridas a serem adicionadas ao mapa.</h2>
+        </div>
+    </container>
+    
+    <container>
+        <div class="itens divfa">
+            <img src="imagens/sugerido.jpeg" alt="">
+        </div>
+
+        <div class="itens divtexto">
+            <h2>Os marcadores amarelos são pontos já sugeridos no mapa, logo não são revisados. Sua serventia é para que o usuário tenha noção, no mapa, se um ponto que não está adicionado já foi sugerido. Este não tem opção de avaliação.  </h2>
+        </div>
+    </container>
+
+    <container>
+        <div class="itens divfa">
+            <img src="imagens/user.jpeg" alt="">
+        </div>
+
+        <div class="itens divtexto">
+            <h2>O marcador vermelho é o ponto gerado, no mapa, após o usuário fazer a ação de si localizar. Ele não responde às interações do usuário.</h2>
+        </div>
+    </container>
+</div>
+
+    <a href="index.php" class="btn btn-primary mt-4" style="margin-left: 20px; margin-bottom: 10px;">Voltar ao Mapa</a>
 </body>
 </html>

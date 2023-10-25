@@ -168,6 +168,13 @@ function abrirCaixaRegistro(latitude, longitude) {
     });
 
     popup.setHTML(`
+    <style>
+  .popup .mapboxgl-popup-content {
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(0, 0, 0, 0.30);
+  }
+</style>
         <div class='popup-title' style="text-align: center;"><h3>Registrar Ponto</h3></div>
         <div class='popup-content'>
             <form method='POST' action='registrar_ponto.php' style="text-align: center;">
@@ -175,14 +182,14 @@ function abrirCaixaRegistro(latitude, longitude) {
                 <input type='hidden' name='longitude' value='${latitude}'>
 
                 <div class='form-group' style="text-align: center;">
-                    <input placeholder="Digite o nome do Hospital" type='text' name='titulo' id='titulo' required>
+                    <input class='form-control' style='height:30px; border: 1px solid grey' placeholder="Digite o nome do Hospital" type='text' name='titulo' id='titulo' required>
                 </div>
 
                 <div class='form-group' style="text-align: center;">
-                <input placeholder="Digite a rua do Hospital" type='text' name='rua' id='rua' required>
-                <input placeholder="Digite a cidade do Hospital" type='text' name='cidade' id='titulo' required>
-                <input placeholder="Digite o estado do Hospital" type='text' name='estado' id='estado' required>
-                <input placeholder="Digite o horário do Hospital" type='text' name='horario' id='horario' required>
+                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Digite a rua do Hospital" type='text' name='rua' id='rua' required>
+                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Digite a cidade do Hospital" type='text' name='cidade' id='titulo' required>
+                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Digite o estado do Hospital" type='text' name='estado' id='estado' required>
+                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Digite o horário do Hospital" type='text' name='horario' id='horario' required>
                 </div>
 
                 <button type='submit' class='btn btn-primary'>Registrar</button>

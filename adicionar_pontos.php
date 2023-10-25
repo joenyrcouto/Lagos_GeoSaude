@@ -16,9 +16,6 @@ if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] === UPLOAD_ERR_OK) 
             continue;
         }
 
-        // Remover formatações de texto (caracteres especiais, quebras de linha, etc.)
-        $linha = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $linha);
-
         // Dividir a linha em partes usando o ponto-e-vírgula como separador
         $partes = explode(';', $linha);
 

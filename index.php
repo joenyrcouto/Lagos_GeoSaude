@@ -29,8 +29,8 @@
 
     <div class="side-menu" id="side-menu">
     <ul style="text-align:center;">
-        <a href="#"><li>Sobre o site (em breve)</li></a>
-        <a href="howtouse.html"><li>Como usar o site</li></a>
+        <a href="hist.html"><li>introdução</li></a>
+        <a href="howtouse.html"><li>tutorial de ferramentas</li></a>
         <a href="logar.php"><li>Log In / Sign Up</li></a>
         <a href="listamarcadores.php"><li>Pontos Sugeridos</li></a>
     </ul>

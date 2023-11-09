@@ -15,9 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_start();
         $_SESSION['login_message'] = [
             'success' => false,
-            'message' => 'O email fornecido já está cadastrado.'
+            'message' => 'O email fornecido já está cadastrado'
         ];
-        header('Location: logar.php');
+        header('Location: registrar.php');
         exit();
     } else {
         // Insere os dados na tabela de pessoas
@@ -27,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_start();
         $_SESSION['login_message'] = [
             'success' => true,
-            'message' => 'Cadastro realizado com sucesso.'
+            'message' => 'Cadastro realizado com sucesso'
         ];
-        header('Location: logar.php');
+        header('Location: registrar.php');
         exit();
     }
 }

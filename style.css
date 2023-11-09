@@ -29,7 +29,7 @@ html, body {
     position: absolute;
     bottom: 30px;
     right: 20px;
-    background-color: #ffffff;
+    background-color: #00000082;
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -52,7 +52,7 @@ html, body {
     left: 20px;
     width: 40px;
     height: 40px;
-    background-color: #ffffff;
+    background-color: #0000005f;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -63,17 +63,17 @@ html, body {
 }
 
 .menu-container i {
-    color: #555555;
+    color: #808080;
     font-size: 20px;
 }
 
 .side-menu {
     position: absolute;
     top: 0;
-    left: -300px;
-    width: 300px;
+    left: -350px;
+    width: 350px;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.35);
+    background-color: rgba(2, 2, 2, 0.136);
     transition: left 0.3s ease-in-out;
     z-index: 2;
     backdrop-filter: blur(10px); /* Aplica o efeito de desfoque no fundo */
@@ -88,22 +88,28 @@ html, body {
 .side-menu ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin-top: 28px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .side-menu ul a li {
     padding: 10px 20px;
+    color: rgb(239, 239, 239);
+    text-align: left;
+    font: small-caps bold 24px/1 sans-serif;
+    border-left: solid 4px rgb(100, 100, 100);
+    margin-top: 12px;
+    border-radius: 12px;
 }
 
 .side-menu ul a li:hover {
     padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
-    background-color: rgb(180, 235, 255);
+    background-color: rgba(0, 0, 0, 0.241);
 }
 
 .side-menu ul a li:last-child {
     border-bottom: none;
-    border-bottom: 1px solid #ccc;
 }
 
 .side-menu ul a {
@@ -153,8 +159,8 @@ html, body {
     background-image: none;
     border: 1px solid #cccccc;
     border-radius: 4px;
-    transition: border-color ease-in-out 0.15s, 
-    box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s,;
+    box-shadow: ease-in-out 0.15s;
     overflow: auto;
     resize: none;
   }
@@ -194,21 +200,23 @@ html, body {
     position: absolute;
     bottom: 80px;
     right: 20px;
-    background-color: #ffffff;
+    background-color: #00000082;
     border: none;
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(87, 87, 87, 0.1);
     cursor: pointer;
     z-index: 1;
 }
 
 #mug-button i {
-    color: #555555;
+    color: #ffffff;
     font-size: 20px;
 }
 
     .hidden {
         display: none;
     }
+
+#facolor {color:rgb(255, 255, 255);}

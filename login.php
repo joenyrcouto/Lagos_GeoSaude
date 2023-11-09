@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_start();
         $_SESSION['login_message'] = [
             'success' => false,
-            'message' => 'Email ou senha inválidos.'
+            'message' => 'Email ou senha inválidos'
         ];
         header('Location: logar.php');
         exit();

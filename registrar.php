@@ -114,18 +114,21 @@ if (isset($_SESSION['login_message'])) {
         // Exibe os formulários de cadastro e login em "painéis flutuantes"
         if (!isset($_SESSION['usuario'])) {
             echo '
-            <div class="row" style="width:100vw; ">
+            <div class="row" style="width:100vw;">
                 <div class="col-md-6" style="margin:auto;">
                     <div class="panel">
-                        <h2 style="color:white">Log In</h2>
-                        <form action="login.php" method="POST">
+                        <h2 style="color:white; margin-bottom:20px;">Log up</h2>
+                        <form action="cadastrar.php" method="POST">
                             <div class="mb-3">
-                                <input placeholder="Digite seu email"  type="email" class="form-control" name="email" required minlength="11" maxlength="50">
+                                <input placeholder="Digite um nome" type="text" class="form-control" name="nome" required minlength="2" maxlength="20">
                             </div>
                             <div class="mb-3">
-                                <input style="margin-top: 25px;" placeholder="Digite sua senha"  type="password" class="form-control" name="senha" required minlength="8" maxlength="20">
-                                <button style="margin-top: 52px;" type="submit" class="btn btn-primary">Enviar</button>
-                            <a href="registrar.php" class="linkbox">Não tem login? Aperte aqui</a>
+                                <input placeholder="Digite um email"  type="email" class="form-control" name="email" required minlength="11" maxlength="50">
+                            </div>
+                            <div class="mb-3">
+                                <input placeholder="Digite uma senha"  type="password" class="form-control" name="senha" required minlength="8" maxlength="20">
+                                <button style="margin-top: 34px;" type="submit" class="btn btn-primary">Entrar</button>
+                            <a href="logar.php" class="linkbox">Já tem login? Aperte aqui</a>
                             </div>
                         </form>
                     </div>

@@ -464,8 +464,6 @@
 
 -22.694119278269824, -42.627819096606096; Hospital Regional Darcy Vargas; R. João do Carmo, 110 - Centro, Rio Bonito - RJ <br> 24h
 
--21.703871453228317, -41.325805498541826; UBS - Félix Miranda; R. Rio Bonito, 158 - Guarus, Campos dos Goytacazes - RJ
-
 -22.685985619330754, -42.62180174386058; MATRIZ SMS MEDICINA E SEGURANÇA DO TRABALHO, AO LADO DO SUPERMERCADO ARMAZÉM; Rua Nilo Peçanha, 27 - 204 - Centro, Rio Bonito - RJ <br> Seg-Sex  8h-18h
 
 -22.701822739534446, -42.618368516519965; Oraldents Rio Bonito; R. da Conceição, S/N - Centro, Rio Bonito - RJ <br> Seg-Sex 8h-18h
@@ -487,8 +485,6 @@
 -22.703008740294585, -42.62398295273529; Medclin; R. Oswaldo Cruz, 185 - Centro, Rio Bonito - RJ
 
 -22.701108398989472, -42.62466959820341; Amiga odontologia; R. Quinze de Novembro, 110 - 1º andar - Centro, Rio Bonito - RJ <br> Seg-Sex 8h-18h Sáb-8h-13h
-
--26.89683566273795, -48.70022842573308; UBS - Unidade Básica de Saúde; Rio Bonito
 
 -22.70789088493451, -42.65649790119115; Hospital Colônia de Rio Bonito; R. A, 1268-1418 - Mangueirinha, Rio Bonito - RJ <br> Dom 8h-12h
 

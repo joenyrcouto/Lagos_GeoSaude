@@ -12,7 +12,7 @@
     <div id="map"></div>
     
     <button id="location-button" class="location-button">
-    <i class="fa-solid fa-location-crosshairs"></i>
+    <i class="fa-solid fa-location-crosshairs" id="facolor"></i>
 </button>
 
 <a href="https://github.com/joenyrcouto/Lagos_GeoSaude/tree/main" target="_blank" ><button id="mug-button" class="location-button">
@@ -20,19 +20,21 @@
 </button></a>
 
 <button id="toggleButton" style="bottom: 130px;" class="location-button">
-<i class="fa fa-eye"></i>
+<i class="fa fa-eye" id="facolor"></i>
 </button>
 
     <div class="menu-container" id="menu-button">
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars" id="facolor"></i>
     </div>
+
     <div class="side-menu" id="side-menu">
-        <ul>
-            <li><a href="logar.php">Log In / Sign Up</a></li>
-            <li><a href="listamarcadores.php">Pontos Sugeridos</a></li>
-            <li><a href="#">Info (em breve)</a></li>
-        </ul>
-    </div>
+    <ul style="text-align:center;">
+        <a href="logar.php"><li>Log In / Sign Up</li></a>
+        <a href="#"><li>Sobre o site (em breve)</li></a>
+        <a href="howtouse.html"><li>Como usar o site</li></a>
+        <a href="listamarcadores.php"><li>Pontos Sugeridos</li></a>
+    </ul>
+</div>
 
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.3/mapbox-gl-geocoder.min.js"></script>
@@ -166,19 +168,36 @@ function abrirCaixaRegistro(latitude, longitude) {
     });
 
     popup.setHTML(`
-        <div class='popup-title'><h3>Registrar Ponto</h3></div>
+    <style>
+  .popup .mapboxgl-popup-content {
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(0, 0, 0, 0.30);
+  }
+  .form-control::placeholder { text-align: center;
+                font-size: 20px; }
+</style>
+        <div class='popup-title' style="text-align: center;"><h3>Registrar Ponto</h3></div>
         <div class='popup-content'>
-            <form method='POST' action='registrar_ponto2.php'>
+            <form method='POST' action='registrar_ponto2.php' style="text-align: center;">
                 <input type='hidden' name='latitude' value='${longitude}'>
                 <input type='hidden' name='longitude' value='${latitude}'>
-                <div class='form-group'>
-                    <label for='titulo'>Título:</label>
-                    <input type='text' name='titulo' id='titulo' required>
+
+                <div class='form-group' style="text-align: center;">
+                    <p style="font-size:16px">Digite as informações da institução médica:<p>
                 </div>
-                <div class='form-group'>
-                    <label for='informacoes'>Informações (Endereço e horário de funcionamento):</label>
-                    <textarea class='form-control' name='comentario' required></textarea>
+
+                <div class='form-group' style="text-align: center;">
+                    <input class='form-control' style='height:30px; border: 1px solid grey' placeholder="Nome" type='text' name='titulo' id='titulo' required>
                 </div>
+
+                <div class='form-group' style="text-align: center;">
+                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Rua" type='text' name='rua' id='rua' required>
+                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Cidade" type='text' name='cidade' id='titulo' required>
+                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Estado" type='text' name='estado' id='estado' required>
+                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Horário" type='text' name='horario' id='horario' required>
+                </div>
+
                 <button type='submit' class='btn btn-primary'>Registrar</button>
             </form>
         </div>
@@ -199,10 +218,17 @@ function abrirCaixaRegistro(latitude, longitude) {
 
     // Ajustar a visão do mapa para mostrar completamente o popup
     map.easeTo({
-        center: [longitude, latitude],
+        center: [longitude, latitude+0.005],
         zoom: 14 // Zoom desejado
     });
 }
+
+const searchInput = document.querySelector('.mapboxgl-ctrl-geocoder--input');
+searchInput.addEventListener('click', function () {
+  // Limpar o valor do campo de pesquisa
+  searchInput.value = '';
+});
+
     </script>
 </body>
 </html>

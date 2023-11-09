@@ -41,15 +41,14 @@
 
         $stmt = $pdo->query($sql);
         $pontos = $stmt->fetchAll();
+        session_start();
+            $isAdmin = isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'];
 
         // Verificar se há algum ponto a ser exibido
         if (count($pontos) > 0) {
             echo "<table class='table'>";
             echo "<thead><tr><th>Coordenadas</th><th>Título</th><th>Informações</th></tr></thead>";
             echo "<tbody>";
-
-            session_start();
-            $isAdmin = isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'];
 
             foreach ($pontos as $ponto) {
                 echo "<tr>";
@@ -59,18 +58,22 @@
 
                 if ($isAdmin) {
                     echo "<td>
-                            <form action='atualizar_aparecenomapa.php' method='post'>
-                                <input type='hidden' name='coordenadas' value='".$ponto['coordenadas']."'>
-                                <button type='submit' name='apagar' class='btn btn-danger' onclick='return confirm(\"Tem certeza que deseja apagar o registro?\")'>Apagar Registro</button>
-                            </form>
-                          </td>";
-                    echo "<td>
-                            <form action='atualizar_aparecenomapa.php' method='post'>
-                                <input type='hidden' name='coordenadas' value='".$ponto['coordenadas']."'>
-                                <button type='submit' name='aparecenomapa' value='1' class='btn btn-success'>Aprovar</button>
-                            </form>
-                          </td>";
+            <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#editarModal".$ponto['coordenadas']."'>Editar</button>
+          </td>";
+    echo "<td>
+            <form action='atualizar_aparecenomapa.php' method='post'>
+                <input type='hidden' name='coordenadas' value='".$ponto['coordenadas']."'>
+                <button type='submit' name='apagar' class='btn btn-danger' onclick='return confirm(\"Tem certeza que deseja apagar o registro?\")'>Apagar Registro</button>
+            </form>
+          </td>";
+    echo "<td>
+            <form action='atualizar_aparecenomapa.php' method='post'>
+                <input type='hidden' name='coordenadas' value='".$ponto['coordenadas']."'>
+                <button type='submit' name='aparecenomapa' value='1' class='btn btn-success'>Aprovar</button>
+            </form>
+          </td>";
                 }
+                
 
                 echo "</tr>";
             }
@@ -86,6 +89,36 @@
         <a href="index.php" class="btn btn-primary mt-4">Voltar ao Mapa</a>
 
         <!-- Botão para voltar carregar arquivo -->
+
+        <!-- Modal de Edição -->
+<div class="modal fade" id="editarModal<?php echo $ponto['coordenadas']; ?>" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editarModalLabel">Editar Informações</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulário de edição com campos preenchidos com as informações existentes -->
+                <form action="editar_ponto.php" method="post">
+                    <input type="hidden" name="coordenadas" value="<?php echo $ponto['coordenadas']; ?>">
+                    <div class="mb-3">
+                        <label for="editarTitulo" class="form-label">Título:</label>
+                        <input type="text" class="form-control" id="editarTitulo" name="editarTitulo" value="<?php echo $ponto['titulo']; ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editarInformacoes" class="form-label">Informações:</label>
+                        <textarea class="form-control" id="editarInformacoes" name="editarInformacoes"><?php echo $ponto['informacoes']; ?></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
         <?php
         require 'conexao.php';
 

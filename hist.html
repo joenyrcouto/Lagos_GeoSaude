@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lagos geosaude</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
+    body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+    
+    .tela {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;}
+
+    #titulosite {font-size: 28px;
+    color: aliceblue;
+    flex: 1;}
+
+    #divtitulo {
+    background-color: black;
+    z-index: 1000;
+    width: 100%;
+    height: 15vh;
+    font-size: 25px;
+    padding-left: 40px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.5s ease;
+}
+
+    .tela1 {background-image: url(https://images.unsplash.com/photo-1451481454041-104482d8e284?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);}
+
+    .tela2 {
+    background-image: url(https://i.ytimg.com/vi/6iHLkzXYKD4/maxresdefault.jpg);
+    background-size: cover;}
+
+    .tela3 {
+    background-image: url(https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2012/09/azul-640x360.jpeg);
+    background-size: cover;}
+
+    .infoboxs {
+    padding-left: 20px;
+    border-radius: 20px;
+    background-color: rgba(14, 17, 30, 0.395);
+    color: aliceblue;
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+    width: 600px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);}
+
+    .h1box {font-size: 50px;}
+
+    .pbox {font-size: 25px;}
+
+    .linkbox {text-decoration: none;
+    color: blueviolet;
+    background-color: rgba(21, 1, 32, 0.722);
+    border-radius: 8px;
+    padding-left: 4px;
+    padding-right: 4px;}
+
+    nav{
+    height: 50px;
+    position: absolute;
+    width: 100%;
+    z-index: 990;
+    background-color: #0f2d49;
+    display: flex;
+    justify-content: space-around;
+    padding: 15;
+    padding: 15px 0;
+    margin-top: 0px;
+    align-items: center;
+    color: #ccbf90;
+}
+.logo{
+    font-weight: 200;
+    font-size: 40px;
+}
+.nav-itens{
+    list-style: none;
+    display: flex;
+}
+.nav-itens>li>a{
+    padding-left: 20px;
+    color: #ccbf90;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#mapa{
+    border: #ccbf90 solid 2px;
+    border-radius: 12px;
+    padding-right: 20px;
+}
+
+.form {
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+}
+.login{
+    font-weight: 500;
+    padding: 10px 40px;
+    border: none;
+    color: #202020;
+    background-color: #cac3a7;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.cadastro{
+    font-weight: 500;
+    padding: 10px 40px;
+    font-size: 15px;
+    border: none;
+    color: #ffffff;
+    background-color: #091b2b;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menu2 {
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 35px;
+}
+
+    .menu-item2 {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+    .menu-btn2 {
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    border: none;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+}
+
+    .submenu2 {
+    display: none;
+    position: absolute;
+    background-color: rgba(21, 1, 32, 0.722);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: -30px;
+    top: 100%;
+    z-index: 1;
+}
+
+    .menu-item2:hover .submenu2 {
+    border-radius: 12px;
+    display: block;
+}
+
+    .submenu2 a {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+    .submenu2 a:hover {
+    background-color: rgba(21, 1, 32, 0.847);
+    border-radius: 12px;
+}
+
+
+    table {
+    width: 100%;
+    border-collapse: collapse;
+        }
+
+    th, td {
+    padding: 10px;
+    text-align: left;
+        }
+
+    th {
+    background-color: #1607218b;
+    color: #fff;
+        }
+
+    tr:nth-child(even) {
+    background-color: #20012f5a;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><img style="height: 220px; width: 220px;" src="imagens/logo.png" alt=""></div>
+            
+        <div class="links">
+            <ul class="nav-itens">
+                <li><a href="index.php" id="mapa">Mapa</a></li>
+                <li><a href="howtouse.html">Ferramentas</a></li>
+                <li><a href="pontos_indicados.php">Pontos Sugeridos</a></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <a href="logar.php"><button class="login">Login</button></a>
+            <a href="cadastrar.php"><button class="cadastro">Cadastro</button></a>
+        </div>
+    </nav>
+
+    <section id="tela1" style="position: relative;" title="" class="tela tela1">
+        <article class="infoboxs"> 
+            <div>
+              <h1 class="h1box">Olá, seja bem-vindo ao Lagos GeoSaúde</h1>
+            </div>
+            <p class="pbox">Este é um site para fins de pesquisa sobre instituições médicas.</p>
+          </article>
+    </section>
+
+    <section id="tela2" style="position: relative;" title="" class="tela tela2">
+        <article class="infoboxs" style="width: 550px;">
+            <div>
+              <h1 class="h1box">Explore!</h1>
+            </div>
+            <p class="pbox">Veja algumas de nossas seções: <a href="index.php" class="linkbox">mapa</a>, <a href="howtouse.html" class="linkbox">tutorial de ferramentas</a> e <a href="listamarcadores.php" class="linkbox">pontos sugeridos</a>
+            </p>
+          </article>
+    </section>
+
+    <section id="tela3" style="position: relative;" title="" class="tela tela3">
+        <article class="infoboxs">
+            <div>
+              <h1 class="h1box">Contribua com o site</h1>
+            </div>
+            <p class="pbox">Faça seu <a href="logar.php" class="linkbox">Log In/Log Up</a> para liberar ferramentas do site</p>
+          </article>
+
+          <footer style="padding-left: 8px; padding-right: 8px; border-radius: 15px; margin-bottom: 8px; background-color:rgba(19, 19, 55, 0.481); position: absolute; bottom: 0; right: 12px; box-shadow: 0 0 10px rgb(0, 0, 0);"><p style="color: rgb(211, 211, 211); text-align: right; margin-right: 3px;">Copyright © 2023 | aqui e outros lugares seram mais customizados</p></footer>
+    </section>
+</body>
+<script>
+    let elementoDesvanecimento = document.getElementById("divtitulo");
+let ultimoScroll = window.pageYOffset;
+
+window.addEventListener("scroll", function() {
+    let scrollAtual = window.pageYOffset;
+
+    if (scrollAtual > ultimoScroll) {
+        // Rolagem para baixo
+        elementoDesvanecimento.style.opacity = "0";
+        elementoDesvanecimento.style.pointerEvents = "none";
+    } else {
+        // Rolagem para cima
+        elementoDesvanecimento.style.opacity = "1";
+        elementoDesvanecimento.style.pointerEvents = "auto";
+    }
+
+    ultimoScroll = scrollAtual;
+});
+</script>
+</html>

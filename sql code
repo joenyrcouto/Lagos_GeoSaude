@@ -18,6 +18,7 @@ CREATE TABLE comentario (
   idponto VARCHAR(255),
   idpessoa INT,
   texto TEXT,
+  nota INT,
   FOREIGN KEY (idponto) REFERENCES pontos(coordenadas),
   FOREIGN KEY (idpessoa) REFERENCES pessoas(id)
 );

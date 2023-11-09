@@ -56,8 +56,17 @@ while ($row = $stmt->fetch()) {
             className: 'popup',
             anchor: 'bottom'
         }).setHTML(`
-            <div class='popup-title'><h3>$titulo</h3></div>
-            <div class='popup-info'>$informacoes</div>
+        <style>
+  .popup .mapboxgl-popup-content {
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(0, 0, 0, 0.30);
+  }
+</style>
+<hr style='margin-top:15px;'>
+<div class='popup-title' style='text-align:center;'><h3>$titulo</h3></div>
+<div style='text-align: center; font-size: 17px;'>$informacoes</div>
+<hr style='margin-bottom:15px;'>
             <div class='popup-comments'>";
                /* <div class='popup-title'><h3>Comentários</h3></div>"; */
 
@@ -104,7 +113,7 @@ while ($row = $stmt->fetch()) {
 echo "var mapHeight = map.getCanvas().clientHeight;";
 echo "var relativeOffset = (windowHeight - mapHeight) / windowHeight;";
 echo "map.easeTo({
-        center: [marker.getLngLat().lng, marker.getLngLat().lat + relativeOffset * 0.01], // Ajuste conforme necessário
+        center: [marker.getLngLat().lng, marker.getLngLat().lat + relativeOffset * 0.01+0.006], // Ajuste conforme necessário
         zoom: 14 // Zoom desejado
     });";
     echo "}";

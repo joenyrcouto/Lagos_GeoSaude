@@ -208,6 +208,32 @@
     tr:nth-child(even) {
     background-color: #20012f5a;
         }
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel section {
+            min-width: 100%;
+            height: 100vh;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .arrow.left { left: 20px; }
+        .arrow.right { right: 20px; }
     </style>
 </head>
 <body>
@@ -228,6 +254,8 @@
         </div>
     </nav>
 
+    <div class="carousel-container">
+        <div class="carousel">
     <section id="tela1" style="position: relative;" title="" class="tela tela1">
         <article class="infoboxs"> 
             <div>
@@ -257,25 +285,31 @@
 
           <footer style="padding-left: 8px; padding-right: 8px; border-radius: 15px; margin-bottom: 8px; background-color:rgba(19, 19, 55, 0.481); position: absolute; bottom: 0; right: 12px; box-shadow: 0 0 10px rgb(0, 0, 0);"><p style="color: rgb(211, 211, 211); text-align: right; margin-right: 3px;">Copyright © 2023 | aqui e outros lugares seram mais customizados</p></footer>
     </section>
+</div>
+<div class="arrow left" onclick="prevSlide()">❮</div>
+<div class="arrow right" onclick="nextSlide()">❯</div>
+</div>
 </body>
 <script>
-    let elementoDesvanecimento = document.getElementById("divtitulo");
-let ultimoScroll = window.pageYOffset;
+    let currentIndex = 0;
 
-window.addEventListener("scroll", function() {
-    let scrollAtual = window.pageYOffset;
+    function showSlide(index) {
+        const carousel = document.querySelector('.carousel');
+        const screenSize = window.innerWidth;
 
-    if (scrollAtual > ultimoScroll) {
-        // Rolagem para baixo
-        elementoDesvanecimento.style.opacity = "0";
-        elementoDesvanecimento.style.pointerEvents = "none";
-    } else {
-        // Rolagem para cima
-        elementoDesvanecimento.style.opacity = "1";
-        elementoDesvanecimento.style.pointerEvents = "auto";
+        currentIndex = index;
+        const newTransformValue = -index * screenSize;
+        carousel.style.transform = `translateX(${newTransformValue}px)`;
     }
 
-    ultimoScroll = scrollAtual;
-});
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % 3;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + 3) % 3;
+        showSlide(currentIndex);
+    }
 </script>
 </html>

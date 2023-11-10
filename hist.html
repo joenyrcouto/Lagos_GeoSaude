@@ -40,17 +40,17 @@
     .tela1 {background-image: url(https://images.unsplash.com/photo-1451481454041-104482d8e284?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);}
 
     .tela2 {
-    background-image: url(https://i.ytimg.com/vi/6iHLkzXYKD4/maxresdefault.jpg);
+    background-image: url(https://img.freepik.com/fotos-gratis/paisagens-dramaticas-em-preto-e-branco-com-mar_23-2149843799.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1698796800&semt=ais);
     background-size: cover;}
 
     .tela3 {
-    background-image: url(https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2012/09/azul-640x360.jpeg);
+    background-image: url(https://img.elo7.com.br/product/original/35CEDAD/tela-para-quadro-90x60-cavalo-preto-foto-preto-e-branco-canvas.jpg);
     background-size: cover;}
 
     .infoboxs {
     padding-left: 20px;
     border-radius: 20px;
-    background-color: rgba(14, 17, 30, 0.395);
+    background-color: #0f2133c0;
     color: aliceblue;
     position: absolute;
     bottom: 80px;
@@ -62,12 +62,28 @@
 
     .pbox {font-size: 25px;}
 
-    .linkbox {text-decoration: none;
-    color: blueviolet;
-    background-color: rgba(21, 1, 32, 0.722);
-    border-radius: 8px;
-    padding-left: 4px;
-    padding-right: 4px;}
+    .linkbox {
+    text-decoration: none;
+    color: #fde6b8;
+    display: inline-block;
+    padding-bottom: 0cm;
+    position: relative;
+    }
+    .linkbox::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    width: 0;
+    background-image: linear-gradient(to right,#ccbf90, #fffefc);
+    transition: width 0.25s ease-out;
+    }
+.linkbox:hover::before{
+    width: 100%;
+}
 
     nav{
     height: 50px;
@@ -81,7 +97,7 @@
     padding: 15px 0;
     margin-top: 0px;
     align-items: center;
-    color: #ccbf90;
+    color: #fde6b8;
 }
 .logo{
     font-weight: 200;
@@ -93,13 +109,13 @@
 }
 .nav-itens>li>a{
     padding-left: 20px;
-    color: #ccbf90;
+    color: #fde6b8;
     font-weight: 700;
     text-decoration: none;
 }
 
 #mapa{
-    border: #ccbf90 solid 2px;
+    border: #fde6b8 solid 2px;
     border-radius: 12px;
     padding-right: 20px;
 }
@@ -121,7 +137,7 @@
     padding: 10px 40px;
     border: none;
     color: #202020;
-    background-color: #cac3a7;
+    background-color: #fde6b8;
     border-radius: 10px;
     cursor: pointer;
     margin-right: 10px;
@@ -229,7 +245,7 @@
             transform: translateY(-50%);
             font-size: 24px;
             cursor: pointer;
-            color: white;
+            color: #fde6b8;
         }
 
         .arrow.left { left: 20px; }
@@ -280,10 +296,10 @@
             <div>
               <h1 class="h1box">Contribua com o site</h1>
             </div>
-            <p class="pbox">Faça seu <a href="logar.php" class="linkbox">Log In/Log Up</a> para liberar ferramentas do site</p>
+            <p class="pbox">Faça seu <a href="logar.php" class="linkbox">Login</a> e <a href="logar.php" class="linkbox">Cadastro</a> para liberar ferramentas do site</p>
           </article>
 
-          <footer style="padding-left: 8px; padding-right: 8px; border-radius: 15px; margin-bottom: 8px; background-color:rgba(19, 19, 55, 0.481); position: absolute; bottom: 0; right: 12px; box-shadow: 0 0 10px rgb(0, 0, 0);"><p style="color: rgb(211, 211, 211); text-align: right; margin-right: 3px;">Copyright © 2023 | aqui e outros lugares seram mais customizados</p></footer>
+          <footer style="padding-left: 8px; padding-right: 8px; border-radius: 15px; margin-bottom: 8px; background-color:#0f2133c0; position: absolute; bottom: 0; right: 12px; box-shadow: 0 0 10px black;"><p style="color: rgb(211, 211, 211); text-align: right; margin-right: 3px;">Copyright © 2023 | aqui e outros lugares seram mais customizados</p></footer>
     </section>
 </div>
 <div class="arrow left" onclick="prevSlide()">❮</div>

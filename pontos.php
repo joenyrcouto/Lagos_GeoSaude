@@ -41,12 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pessoaConectada) {
     if (!empty($texto) && $nota >= 1 && $nota <= 5 && !pessoaJaComentou($idpessoa, $coordenadas)) {
         inserirComentario($coordenadas, $idpessoa, $texto, $nota);
         // Redireciona de volta à página principal
-        header('Location: index.php');
+        header('Location: mapa.php');
         exit;
     } else {
         excluirComentariosPessoa($idpessoa, $coordenadas);
         // Redireciona de volta à página principal
-        header('Location: index.php');
+        header('Location: mapa.php');
         exit;
     }
 }
@@ -120,7 +120,7 @@ for ($i = 1; $i <= 5; $i++) {
 echo "</p>";
 
     } else {
-        echo "<p>Ainda não há comentários neste ponto.</p>";
+        echo "<h4>Ainda não há comentários neste ponto.</h4>";
     }
 
     if ($pessoaConectada) {
@@ -131,7 +131,7 @@ echo "</p>";
                       <textarea class='form-control' name='comentario' placeholder='Digite seu comentário' required></textarea>
                   </div>
                   <div class='form-group' style='display: flex;'>
-                      <label for='nota' style='margin-right: 6px;'>Dê uma Nota (1-5):</label>
+                      <label for='nota' style='margin-right: 6px;'>Dê uma Nota:</label>
                       <select name='nota' id='nota' required style='border-radius:8px;'>
                           <option value='1'>1 muito ruim</option>
                           <option value='2'>2 ruim</option>
@@ -141,19 +141,19 @@ echo "</p>";
                       </select>
                   </div>
                   <div style='text-align:center;'>
-                  <button type='submit' class='btn btn-primary' style='border-radius: 12px;'>Enviar Comentário</button>
+                  <button type='submit' class='btn btn-primary' style='border-radius: 12px; background-color: rgb(225, 200, 31); color: black; border-color: black;'>Enviar Comentário</button>
                   </div>
               </form>";
         } else {
             echo "<form method='POST' action=''>
                   <input type='hidden' name='coordenadas' value='{$row['coordenadas']}'>
                   <div style='text-align:center;'>
-                  <button type='submit' class='btn btn-primary' style='background-color:orangered; margin-top: 8px;'>Excluir Comentário</button>
+                  <button type='submit' class='btn btn-primary' style='background-color:orangered; margin-top: 8px; background-color: rgb(225, 200, 31); color: black; border-color: black;'>Excluir Comentário</button>
                   </div>
               </form>";
         }
     } else {
-        echo "<div style='text-align: center'><a href='logar.php' class='btn btn-primary' style='text-decoration: none; border-radius: 12px; color: white;'>Faça login para comentar</a></p></div>";
+        echo "<div style='text-align: center'><a href='logar.php' class='btn btn-primary' style='text-decoration: none; border-radius: 12px; background-color: rgb(225, 200, 31); color: black; border-color: black;'>Faça login para comentar</a></p></div>";
     }
 
     echo "`

@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
 html, body {
+    font-family: 'Poppins', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -8,9 +10,9 @@ html, body {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 5%;
     right: 0;
-    width: 100%;
+    width: 95%;
 }
 
 /* css infos dos pontos*/
@@ -25,97 +27,35 @@ html, body {
     font-size: 14px;
 }
 
-.location-button {
-    position: absolute;
-    bottom: 30px;
-    right: 20px;
-    background-color: #00000082;
+/* botoes com opcoes do mapa */
+
+.mug-button {
+    background-color: #0f2d49df;
     border: none;
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(87, 87, 87, 0.1);
     cursor: pointer;
     z-index: 1;
+    margin-bottom: 5px;
 }
 
-.location-button i {
-    color: #555555;
+.mug-button:hover {
+    background-color:rgb(225, 200, 31);
+}
+
+.mug-button i {
+    color: #ffffff;
     font-size: 20px;
 }
 
-/* css menu */
-
-.menu-container {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: #0000005f;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.ul-botoes {
     z-index: 1;
-}
-
-.menu-container i {
-    color: #808080;
-    font-size: 20px;
-}
-
-.side-menu {
     position: absolute;
-    top: 0;
-    left: -350px;
-    width: 350px;
-    height: 100%;
-    background-color: rgba(2, 2, 2, 0.136);
-    transition: left 0.3s ease-in-out;
-    z-index: 2;
-    backdrop-filter: blur(10px); /* Aplica o efeito de desfoque no fundo */
-    -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores WebKit */
-  }
-  
-  .side-menu.open {
-    left: 0;
-  }
-  
-
-.side-menu ul {
+    bottom: 20px;
+    right: 20px;
     list-style-type: none;
-    padding: 0;
-    margin-top: 28px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.side-menu ul a li {
-    padding: 10px 20px;
-    color: rgb(239, 239, 239);
-    text-align: left;
-    font: small-caps bold 24px/1 sans-serif;
-    border-left: solid 4px rgb(100, 100, 100);
-    margin-top: 12px;
-    border-radius: 12px;
-}
-
-.side-menu ul a li:hover {
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.241);
-}
-
-.side-menu ul a li:last-child {
-    border-bottom: none;
-}
-
-.side-menu ul a {
-    text-decoration: none;
-    color: #555555;
-    font-weight: bold;
 }
 
 /* css comentarios, e caixa de texto, das infos dos pontos*/
@@ -194,29 +134,360 @@ html, body {
     border-color: #204d74;
   }
 
-  /* botao ocultar/mostrar */
-
-  #mug-button {
-    position: absolute;
-    bottom: 80px;
-    right: 20px;
-    background-color: #00000082;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 2px 4px rgba(87, 87, 87, 0.1);
-    cursor: pointer;
-    z-index: 1;
-}
-
-#mug-button i {
-    color: #ffffff;
-    font-size: 20px;
-}
-
-    .hidden {
+.hidden {
         display: none;
     }
 
 #facolor {color:rgb(255, 255, 255);}
+
+/* barra de pesquisa */
+
+.mapboxgl-ctrl-geocoder {
+    position: relative;
+    background-color: #0f2d49e1 !important; /* Cor de fundo desejada */
+    border: none !important; /* Remove a borda padrão */
+    padding-left: 30px; /* Adicione espaço à esquerda para o ícone */
+}
+
+.mapboxgl-ctrl-geocoder::before {
+    content: '\f002'; /* Código Unicode do ícone de pesquisa do FontAwesome */
+    font-family:  'Font Awesome\ 5 Free'; /* Família da fonte FontAwesome */
+    font-weight: 900; /* Peso da fonte, ajuste conforme necessário */
+    position: absolute;
+    left: 10px; /* Ajuste a posição do ícone conforme necessário */
+    top: 50%;
+    transform: translateY(-50%);
+    color: white; /* Cor do ícone */
+}
+
+.mapboxgl-ctrl-geocoder--input {
+    color: white !important; /* Cor do texto na barra de pesquisa */
+}
+
+.mapboxgl-ctrl-geocoder--input::placeholder {
+    color: white !important; /* Cor do texto de espaço reservado na barra de pesquisa */
+}
+
+.mapboxgl-ctrl-geocoder--button {
+    background-color: #0f2d49 !important; /* Cor de fundo do botão de pesquisa */
+    color: white !important; /* Cor do texto no botão de pesquisa */
+}
+
+.mapboxgl-ctrl-geocoder--button:hover {
+    background-color: darkgray !important; /* Cor de fundo do botão de pesquisa ao passar o mouse sobre ele */
+}
+
+.mapboxgl-ctrl-geocoder--icon {
+    display: none !important;
+}
+
+.mapbox-gl-geocoder--error,  .mapbox-gl-geocoder--no-results, 
+.mapboxgl-ctrl-geocoder .suggestions li a {
+  color: rgb(255, 255, 255) !important; /* Cor do texto dos itens da lista */
+  background-color:#0f2d49;
+  text-decoration: none; /* Remove a sublinhado dos links */
+  display: block; /* Garante que o link ocupe a largura total do item da lista */
+}
+
+.mapboxgl-ctrl-geocoder .suggestions li a:hover,  .mapboxgl-ctrl-geocoder .suggestions .active a {
+  color: #0f2d49 !important; /* Cor do texto dos itens da lista */
+  background-color:#ffffff;
+  text-decoration: none; /* Remove a sublinhado dos links */
+  display: block; /* Garante que o link ocupe a largura total do item da lista */
+}
+
+/* marcadores */
+
+.mapboxgl-marker svg g g ellipse {
+  display: none;
+}
+
+.mapboxgl-popup-tip {
+  display: none;
+}
+
+/* caixa do popup dos marcadores */
+
+.popup .mapboxgl-popup-content {
+  background: #0f2d49;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(0, 0, 0, 0.30);
+  text-align: center;
+}
+
+.popup .mapboxgl-popup-content h3 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.popup .mapboxgl-popup-content h4 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* menu */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  --color-hover: rgb(225, 200, 31);
+  --transition: all 0.2s ease;
+}
+
+:root {
+  --color-white: #091f31;
+  --color-black: #fff;
+}
+
+.sidebar {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 78px;
+  height: 100vh;
+  background: var(--color-white);
+  padding: 8px 14px 0 12px;
+  transition: var(--transition);
+  box-sizing: border-box;
+}
+
+.sidebar.expand {
+  width: 250px;
+  transition: var(--transition);
+}
+
+#sair {background-color: #861010;}
+
+#sair:hover {background-color: #630c0c;}
+
+.nav-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.nav-header .logo {
+  color: var(--color-black);
+  color: rgb(255, 255, 255);
+  font-size: 23px;
+  font-weight: 1200;
+  opacity: 0;
+  transition: var(--transition);
+  font-size: 35px;
+  font-family: 'Playfair Display';
+}
+
+.sidebar.expand .nav-header .logo {
+  opacity: 1;
+  transition: var(--transition);
+}
+
+.nav-header .btn-menu {
+  position: absolute;
+  color: var(--color-black);
+  top: 20%; /* posicao do botado do menu */
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 23px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.sidebar.expand .nav-header .btn-menu {
+  margin-right: 0;
+}
+
+.nav-links {
+  margin-top: 20px;
+  height: 60vh;
+}
+
+.nav-links li {
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+
+.nav-links i {
+  color: var(--color-black);
+  height: 50px;
+  min-width: 50px;
+  font-size: 23px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.nav-links input {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-black);
+  outline: none;
+  height: 40px;
+  width: 50%;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-bg);
+  padding: 0;
+}
+
+.sidebar.expand .nav-links input {
+  width: 100%;
+  padding: 0 20px 0 40px;
+}
+
+.nav-links li a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  background: var(--color-white);
+  background-color: #071420; /* itens do menu */
+}
+
+.nav-links li:hover a {
+  background: var(--color-hover);
+}
+
+.nav-links li:hover i {
+  color: var(--color-white);
+}
+
+.nav-links li a .title {
+  color: var(--color-black);
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  display: none;
+  transition: var(--transition);
+}
+
+.sidebar.expand .nav-links li a .title {
+  display: block;
+  transition: var(--transition);
+}
+
+.nav-links li:hover a .title {
+  color: var(--color-white);
+}
+
+.nav-links li .tooltip {
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 19px);
+  z-index: 3;
+  background: var(--color-white);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 14px;
+  color: var(--color-black);
+  font-size: 15px;
+  white-space: nowrap;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0s;
+}
+
+.sidebar li:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transition: var(--transition);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebar.expand .tooltip {
+  display: none;
+}
+
+.nav-links .search-btn {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-25px);
+  font-size: 23px;
+  color: var(--color-black);
+  border-radius: 12px;
+  background: var(--color-white);
+  transition: var(--transition);
+}
+
+.sidebar.expand .nav-links .search-btn {
+  background: transparent;
+  transition: var(--transition);
+}
+
+.sidebar.expand .nav-links li:hover .search-btn {
+  color: var(--color-black);
+}
+
+.nav-links .search-btn:hover {
+  background: var(--color-hover);
+}
+
+.theme-wrapper {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  width: 250px;
+  left: 0;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.theme-wrapper .theme-icon {
+  font-size: 20px;
+  color: var(--color-black);
+  display: none;
+  transition: var(--transition);
+}
+.sidebar.expand .theme-wrapper .theme-icon {
+  display: block;
+}
+
+.theme-wrapper p {
+  font-size: 16px;
+  color: var(--color-black);
+  font-weight: 400;
+  display: none;
+  transition: var(--transition);
+}
+
+.sidebar.expand .theme-wrapper p {
+  display: block;
+}
+
+.theme-wrapper .theme-btn {
+  width: 40px;
+  height: 20px;
+  background: var(--color-bg);
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-wrapper .theme-btn .theme-ball {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--color-black);
+  border-radius: 50%;
+  top: 2px;
+  left: 3px;
+  transition: var(--transition);
+}
+
+.theme-wrapper .theme-btn .theme-ball.dark {
+  left: 20px;
+}

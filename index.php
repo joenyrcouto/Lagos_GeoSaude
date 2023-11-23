@@ -1,233 +1,366 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+    ?>
 <html>
 <head>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa Lagos GeoSaude</title>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
-</head>
-<body>
-    <div id="map"></div>
-
-    <button id="toggleButton" style="bottom: 130px;" class="location-button">
-<i class="fa fa-eye" id="facolor"></i>
-</button>
-    
-    <button id="location-button" class="location-button">
-    <i class="fa-solid fa-location-crosshairs" id="facolor"></i>
-</button>
-
-<a href="https://github.com/joenyrcouto/Lagos_GeoSaude/tree/main" target="_blank" ><button id="mug-button" class="location-button">
-<i class="fa-brands fa-github"></i>
-</button></a>
-
-    <div class="menu-container" id="menu-button">
-        <i class="fa-solid fa-bars" id="facolor"></i>
-    </div>
-
-    <div class="side-menu" id="side-menu">
-    <ul style="text-align:center;">
-    <a href="logar.php"><li>LOG IN</li></a>
-    <a href="registrar.php"><li>SIGN UP</li></a>
-        <a href="hist.html"><li>INTRODUÇÃO</li></a>
-        <a href="howtouse.html"><li>TUTORIAL DE FERRAMENTAS</li></a>
-        <a href="listamarcadores.php"><li>PONTOS SUGERIDOS</li></a>
-    </ul>
-</div>
-
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.3/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet"
-        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.3/mapbox-gl-geocoder.css"
-        type="text/css"/>
-
-    <script>
-        // token mapbox
-        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9lY291dG8iLCJhIjoiY2xmcHN5NndpMGN0MDN4bmw1ZTQ3N2owNSJ9.Wm1TXO5LIzXcvRPVkLdXJQ';
-
-        // Create a new map instance
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v12',
-            center: [-42.280395, -22.805185],
-            zoom: 9.5
-        });
-
-        // remove layers de mapa não necessárias
-        map.on('load', function() {
-            map.removeLayer('road-label');
-            map.removeLayer('poi-label');
-        });
-
-        // Adicionar barra de pesquisa
-        const geocoder = new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl,
-            marker: {
-                color: 'purple'
-            },
-            placeholder: 'Pesquisar local',
-            language: 'pt-BR',
-            countries: 'br',
-            bbox: [-43.1796, -23.0814, -41.4308, -22.4582] // limitar área
-        });
-
-        // Posiciona a barra de pesquisa no canto superior direito do mapa
-        map.addControl(geocoder, 'top-right');
-
-        // Adicionar funcionalidade ao botão de localização
-const locationButton = document.getElementById('location-button');
-locationButton.addEventListener('click', () => {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            const lngLat = [position.coords.longitude, position.coords.latitude];
-            map.flyTo({
-                center: lngLat,
-                zoom: 14
-            });
-
-            const userMarker = new mapboxgl.Marker({ color: 'red' }) // Define a cor do marcador como vermelho
-                .setLngLat(lngLat)
-                .addTo(map);
-        });
-    } else {
-        alert('Geolocation is not supported by your browser.');
-    }
-});
-
-        // Abrir/fechar o menu lateral
-        const menuButton = document.getElementById('menu-button');
-        const sideMenu = document.getElementById('side-menu');
-        menuButton.addEventListener('click', () => {
-            sideMenu.classList.toggle('open');
-        });
-
-        // adicionar novos pontos ao mapa
-        <?php require_once 'pontos.php'; ?>
-
-        // Obtém o elemento do botão pelo ID
-        var toggleButton = document.getElementById('toggleButton');
-
-        // Adiciona um ouvinte de evento de clique ao botão
-        toggleButton.addEventListener('click', function() {
-            // Define a URL para a qual você deseja redirecionar a página
-            var novaURL = 'index2.php'; // Substitua com a URL desejada
-
-            // Redireciona para a nova URL
-            window.location.href = novaURL;
-        });
-
-        map.on('click', function (e) {
-    const sideMenu = document.getElementById('side-menu');
-    if (sideMenu.classList.contains('open')) {
-        sideMenu.classList.remove('open');
-    } else {
-        const latitude = e.lngLat.lat;
-        const longitude = e.lngLat.lng;
-
-        // Feche todos os popups abertos
-        const openPopups = document.querySelectorAll('.mapboxgl-popup');
-        openPopups.forEach(popup => popup.remove());
-
-        // Verificar se o ponto clicado já existe
-        const features = map.queryRenderedFeatures(e.point, { layers: ['marker-layer'] });
-        if (features.length === 0) {
-            // Se não houver marcador existente, abra a caixa de registro
-            abrirCaixaRegistro(latitude, longitude);
-        } else {
-            const marker = features[0];
-            const popup = marker.getPopup();
-
-            if (popup.isOpen()) {
-                // Se a caixa de informações do ponto estiver aberta, feche-a
-                popup.remove();
-            } else {
-                // Se a caixa do marcador não estiver aberta, abra-a
-                popup.addTo(map);
-            }
-        }
-    }
-});
-
-
-let currentPopup; // Variável para manter o popup atual
-
-// Função para abrir a caixa de registro
-function abrirCaixaRegistro(latitude, longitude) {
-    if (currentPopup) {
-        currentPopup.remove(); // Remove o popup anterior, se houver
-    }
-
-    const popup = new mapboxgl.Popup({
-        closeButton: false,
-        className: 'popup',
-        anchor: 'bottom'
-    });
-
-    popup.setHTML(`
+    <title>Lagos geosaude</title>
     <style>
-  .popup .mapboxgl-popup-content {
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-    border: 2px solid rgba(0, 0, 0, 0.30);
-  }
-  .form-control::placeholder { text-align: center;
-                font-size: 20px; }
-</style>
-        <div class='popup-title' style="text-align: center;"><h3>Registrar Ponto</h3></div>
-        <div class='popup-content'>
-            <form method='POST' action='registrar_ponto.php' style="text-align: center;">
-                <input type='hidden' name='latitude' value='${longitude}'>
-                <input type='hidden' name='longitude' value='${latitude}'>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
+    body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+    
+    .tela {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;}
 
-                <div class='form-group' style="text-align: center;">
-                    <p style="font-size:16px">Digite as informações da institução médica:<p>
-                </div>
+    #titulosite {font-size: 28px;
+    color: aliceblue;
+    flex: 1;}
 
-                <div class='form-group' style="text-align: center;">
-                    <input class='form-control' style='height:30px; border: 1px solid grey' placeholder="Nome" type='text' name='titulo' id='titulo' required>
-                </div>
-
-                <div class='form-group' style="text-align: center;">
-                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Rua" type='text' name='rua' id='rua' required>
-                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Cidade" type='text' name='cidade' id='titulo' required>
-                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Estado" type='text' name='estado' id='estado' required>
-                <input class='form-control' style='height:30px; border:1px solid grey' placeholder="Horário" type='text' name='horario' id='horario' required>
-                </div>
-
-                <button type='submit' class='btn btn-primary'>Registrar</button>
-            </form>
-        </div>
-    `);
-
-    const marker = new mapboxgl.Marker({ color: 'green' }) // Define a cor do marcador como verde
-        .setLngLat([longitude, latitude])
-        .setPopup(popup)
-        .addTo(map);
-
-    marker.togglePopup(); // Abrir a caixa do marcador imediatamente
-    currentPopup = popup;
-
-    popup.on('close', () => {
-        currentPopup = null; // Limpa a referência ao popup atual
-        marker.remove(); // Remover o marcador ao fechar a caixa
-    });
-
-    // Ajustar a visão do mapa para mostrar completamente o popup
-    map.easeTo({
-        center: [longitude, latitude+0.005],
-        zoom: 14 // Zoom desejado
-    });
+    #divtitulo {
+    background-color: black;
+    z-index: 1000;
+    width: 100%;
+    height: 15vh;
+    font-size: 25px;
+    padding-left: 40px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.5s ease;
 }
 
-const searchInput = document.querySelector('.mapboxgl-ctrl-geocoder--input');
-searchInput.addEventListener('click', function () {
-  // Limpar o valor do campo de pesquisa
-  searchInput.value = '';
-});
+    .tela1 {background-image: url(https://images.unsplash.com/photo-1451481454041-104482d8e284?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Isso impede que a imagem role com a página */
+    background-position: center center;}
 
-    </script>
+    .tela2 {
+    background-image: url(https://images.unsplash.com/photo-1627888464406-a32b933c6b97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8&w=1000&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Isso impede que a imagem role com a página */
+    background-position: center center;}
+
+    .tela3 {
+    background-image: url(https://images.unsplash.com/photo-1604552514256-b39243568d92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Isso impede que a imagem role com a página */
+    background-position: center center;}
+
+    .infoboxs {
+    padding-left: 20px;
+    border-radius: 20px;
+    background-color: #0f2133c0;
+    color: aliceblue;
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+    width: 600px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);}
+
+    .h1box {font-size: 50px;}
+
+    .pbox {font-size: 25px;}
+
+    .linkbox {
+    text-decoration: none;
+    color: #fdfab8;
+    display: inline-block;
+    padding-bottom: 0cm;
+    position: relative;
+    }
+    .linkbox::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    width: 0;
+    background-image: linear-gradient(to right,#ccbf90, #fffefc);
+    transition: width 0.25s ease-out;
+    }
+.linkbox:hover::before{
+    width: 100%;
+}
+
+    nav{
+    height: 50px;
+    position: absolute;
+    width: 100%;
+    z-index: 990;
+    background-color: #0f2d49;
+    display: flex;
+    justify-content: space-around;
+    padding: 15;
+    padding: 15px 0;
+    margin-top: 0px;
+    align-items: center;
+    color: #fde6b8;
+}
+.logo{
+    width: 30vw;
+    font-weight: 200;
+    font-size: 40px;
+    margin-top: 12px;
+}
+.nav-itens{
+    list-style: none;
+    display: flex;
+}
+.nav-itens>li>a{
+    padding-left: 20px;
+    color: #fdfab8;
+    font-weight: 700;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+#mapa{
+    border: #fde6b8 solid 2px;
+    border-radius: 12px;
+    padding-right: 20px;
+}
+
+.form {
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.buttons {
+    width: 24vw;
+    display: flex;
+    align-items: center;
+}
+.login{
+    font-weight: 550;
+    padding: 10px 40px;
+    border: none;
+    color: #202020;
+    background-color: #fdfab8;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.cadastro{
+    font-weight: 500;
+    padding: 10px 40px;
+    font-size: 15px;
+    border: none;
+    color: #ffffff;
+    background-color: #091b2b;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menu2 {
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 35px;
+}
+
+    .menu-item2 {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+    .menu-btn2 {
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    border: none;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+}
+
+    .submenu2 {
+    display: none;
+    position: absolute;
+    background-color: rgba(21, 1, 32, 0.722);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: -30px;
+    top: 100%;
+    z-index: 1;
+}
+
+    .menu-item2:hover .submenu2 {
+    border-radius: 12px;
+    display: block;
+}
+
+    .submenu2 a {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+    .submenu2 a:hover {
+    background-color: rgba(21, 1, 32, 0.847);
+    border-radius: 12px;
+}
+
+
+    table {
+    width: 100%;
+    border-collapse: collapse;
+        }
+
+    th, td {
+    padding: 10px;
+    text-align: left;
+        }
+
+    th {
+    background-color: #1607218b;
+    color: #fff;
+        }
+
+    tr:nth-child(even) {
+    background-color: #20012f5a;
+        }
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel section {
+            min-width: 100%;
+            height: 100vh;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+            width: 40px;
+        }
+
+        .arrow.left { left: 20px; }
+        .arrow.right { right: 20px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><img style="height: 220px; width: 220px;" src="imgs/logo.png" alt=""></div>
+            
+        <div style="width: 38vw;">
+            <ul class="nav-itens">
+                <li><a href="mapa.php" id="mapa">Mapa</a></li>
+                <li><a href="howtouse.html">Ferramentas</a></li>
+                <li><a href="listamarcadores.php">Pontos Sugeridos</a></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <?php
+        if (!isset($_SESSION['usuario'])) {
+          echo '
+          <a href="logar.php"><button class="login">Login</button></a>
+          <a href="registrar.php"><button class="cadastro">Cadastro</button></a>';
+      } else {
+        echo '
+        <a href="logout-intro.php"><button class="login" style="background-color: #861010; color: white;">Sair da conta</button></a>';
+      }      
+      session_write_close();
+        ?>
+        </div>
+    </nav>
+
+    <div class="carousel-container">
+        <div class="carousel">
+    <section id="tela1" style="position: relative;" title="" class="tela tela1">
+        <article class="infoboxs"> 
+            <div>
+              <h1 class="h1box">Olá, seja bem-vindo ao Lagos GeoSaúde</h1>
+            </div>
+            <p class="pbox">Este é um site para fins de pesquisa sobre instituições médicas.</p>
+          </article>
+    </section>
+
+    <section id="tela2" style="position: relative;" title="" class="tela tela2">
+        <article class="infoboxs" style="width: 550px;">
+            <div>
+              <h1 class="h1box">Explore!</h1>
+            </div>
+            <p class="pbox">Veja algumas de nossas seções: <a href="mapa.php" class="linkbox">mapa</a>, <a href="howtouse.html" class="linkbox">tutorial de ferramentas</a> e <a href="listamarcadores.php" class="linkbox">pontos sugeridos.</a>
+            </p>
+          </article>
+    </section>
+
+    <section id="tela3" style="position: relative;" title="" class="tela tela3">
+        <article class="infoboxs">
+            <div>
+              <h1 class="h1box">Contribua com o site</h1>
+            </div>
+            <p class="pbox">Faça seu <a href="logar.php" class="linkbox">Cadastro</a> e <a href="logar.php" class="linkbox">Login</a> para liberar ferramentas do site.</p>
+          </article>
+
+          <footer style="padding-left: 8px; padding-right: 8px; border-radius: 15px; margin-bottom: 8px; background-color:#0f2133c0; position: absolute; bottom: 0; right: 12px; box-shadow: 0 0 10px black;"><p style="color: rgb(211, 211, 211); text-align: right; margin-right: 3px;">Copyright © 2023 | fotos do site tirada de algum lugar (isso vai ser editado)</p></footer>
+    </section>
+</div>
+<div class="arrow left" onclick="prevSlide()">❮</div>
+<div class="arrow right" onclick="nextSlide()">❯</div>
+</div>
 </body>
+<script>
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const carousel = document.querySelector('.carousel');
+        const screenSize = window.innerWidth;
+
+        currentIndex = index;
+        const newTransformValue = -index * screenSize;
+        carousel.style.transform = `translateX(${newTransformValue}px)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % 3;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + 3) % 3;
+        showSlide(currentIndex);
+    }
+</script>
 </html>

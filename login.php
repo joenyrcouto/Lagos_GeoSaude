@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $isAdmin = $pessoa['admin'];
         $_SESSION['isAdmin'] = $isAdmin;
 
-        header('Location: logar.php');
+        header('Location: mapa.php');
         exit();
     } else {
         session_start();

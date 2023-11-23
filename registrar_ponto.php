@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$latitude . ',' . $longitude, $titulo, $informacoes]);
 
     // Redirecione o usuário de volta ao mapa ou faça qualquer outra ação necessária
-    header('Location: index.php');
+    header('Location: mapa.php');
     exit();
 }
 ?>

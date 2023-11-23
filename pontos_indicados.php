@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pessoaConectada) {
     if (!empty($texto)) {
         inserirComentario($coordenadas, $idpessoa, $texto);
         // Redireciona de volta à página principal
-        header('Location: mapa.php');
+        header('Location: mapa2.php');
         exit;
     }
 }
@@ -65,7 +65,7 @@ while ($row = $stmt->fetch()) {
 </style>
 <hr style='margin-top:15px;'>
 <div class='popup-title' style='text-align:center;'><h3>$titulo</h3></div>
-<div style='text-align: center; font-size: 17px;'>$informacoes</div>
+<div style='text-align: center; font-size: 17px; margin-bottom: 6px;'>$informacoes</div>
 <hr style='margin-bottom:15px;'>
             <div class='popup-comments'>";
                /* <div class='popup-title'><h3>Comentários</h3></div>"; */

@@ -1,88 +1,8 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-}
-
-.sky {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #87CEEB; /* Cor de céu azul */
-    animation: moveSky 20s linear infinite;
-}
-
-.rain {
-    position: absolute;
-    width: 2px;
-    height: 10px;
-    background: #00F; /* Cor da chuva (azul) */
-    animation: fall 0.5s linear infinite;
-    opacity: 0.7;
-}
-
-/* Animação de movimento do céu */
-@keyframes moveSky {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
-
-/* Animação de queda da chuva */
-@keyframes fall {
-    0% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(100vh);
-    }
-}
-body, html {
+    background-image: url(https://images.unsplash.com/photo-1451481454041-104482d8e284?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: auto;
     overflow-x: hidden;
-}
-
-.sky {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #87CEEB; /* Céu azul claro */
-    animation: daytime 60s linear infinite; /* Animação de transição dia/noite */
-}
-
-.rain {
-    position: absolute;
-    width: 1px;
-    height: 10px;
-    background-color: #00f; /* Cor das gotas de chuva (azul) */
-    opacity: 0.7; /* Opacidade das gotas de chuva */
-    animation: raindrop 1s linear infinite; /* Animação de queda de chuva */
-    pointer-events: none;
-}
-
-@keyframes daytime {
-    0%, 100% {
-        background-color: #87CEEB; /* Céu azul claro */
-    }
-    50% {
-        background-color: #00008B; /* Céu azul escuro */
-    }
-}
-
-@keyframes raindrop {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(95vh);
-    }
 }
